@@ -1,0 +1,384 @@
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #161616;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: #3b82f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+.cursor-blur {
+    position: fixed;
+    pointer-events: none;
+    background: radial-gradient(600px circle at var(--x, 0px) var(--y, 0px), rgba(29, 78, 216, 0.15), transparent 80%);
+    z-index: 99;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(22, 22, 22, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.main-nav ul li a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-nav ul li a:hover {
+    color: var(--text-primary);
+}
+
+.app-showcase {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+#hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    color: var(--text-secondary);
+}
+
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.app-card {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.app-header h2 {
+    font-size: 1.5rem;
+}
+
+.app-icon {
+    font-size: 2.5rem;
+}
+
+.app-description p {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.app-description ul {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+}
+
+.app-description ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.app-description ul li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+}
+
+.app-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.download-btn {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.download-btn:hover {
+    background-color: #2563eb;
+}
+
+.app-tag {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1024px) {
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Existing styles from previous CSS */
+
+/* Videos Section Styles */
+.videos-section {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.videos-section h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.videos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.video-item {
+    flex: 0 1 calc(50% - 1rem);
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.video-item:hover {
+    transform: scale(1.02);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-item h3 {
+    padding: 1rem;
+    background-color: var(--bg-secondary);
+    margin: 0;
+}
+
+.subscribe-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.subscribe-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Blog Section Styles */
+.blog-section {
+    margin-top: 4rem;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+.blog-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.featured-blog-post h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.blog-intro, .preview-content p {
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    background-color: rgba(59, 130, 246, 0.1);
+    border-left: 4px solid var(--accent-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    color: var(--text-primary);
+}
+
+.newsletter-teaser {
+    background-color: rgba(22, 22, 22, 0.5);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.newsletter-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 1rem;
+    transition: background-color 0.3s;
+}
+
+.newsletter-btn:hover {
+    background-color: #2563eb;
+}
+
+/* Footer Styles */
+.site-footer {
+    background-color: rgba(22, 22, 22, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 3rem 5%;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h4 {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li, .footer-section .social-links a {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .videos-container {
+        flex-direction: column;
+    }
+
+    .video-item {
+        flex: 1 1 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+
+/* Add to existing styles.css */
+.read-more-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.read-more-btn:hover {
+    background-color: #2563eb;
+}
+
+.full-blog-content {
+    background-color: rgba(22, 22, 22, 0.5);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.full-article-link {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.full-article-link:hover {
+    text-decoration: underline;
+}
