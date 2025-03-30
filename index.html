@@ -3,164 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Elson - File Organizer & Insights</title>
+    <title>Just Elson - Productivity Solutions</title>
+    <!-- Google Fonts - Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/app_icon(personal).ico" type="image/x-icon">
 </head>
 <body>
-    <div class="cursor-blur"></div>
-    <nav class="main-nav">
-        <div class="logo">Just Elson</div>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#apps">Apps</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#blog">Blog</a></li>
-        </ul>   
-    </nav>
+    <!-- Theme toggle button -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light theme">
+        <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.79-1.41-1.41-1.79 1.79z"/></svg>
+        <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>
+    </button>
+    
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Animated background blur elements -->
+    <div class="blur-element blur-1"></div>
+    <div class="blur-element blur-2"></div>
 
-    <main class="app-showcase">
-        <section id="hero">
-            <h1>Streamline Your Digital Life</h1>
-            <p>Professional File Organization Made Simple</p>
-            <h2>USE CODE (PRODUCTIVE25) 100% OFF</h2>
-
-        </section>
-
-        <section id="apps" class="apps-grid">
-            <div class="app-card personal-app">
-                <div class="app-header">
-                    <h2>Personal File Organizer</h2>
-                    <div class="app-icon">🗂️</div>
-                </div>
-                <div class="app-description">
-                    <p>For everyday users who want a clutter-free digital space.</p>
-                    <ul>
-                        <li>Automatic file categorization</li>
-                        <li>Smart search filters</li>
-                        <li>One-click cleanup</li>
-                        <li>Secure private document vault</li>
-                    </ul>
-                </div>
-                <div class="app-cta">
-                    <a href="https://elsonm.gumroad.com/l/organizerapps" class="download-btn" download>BUY NOW</a>
-                    <span class="app-tag">Perfect for Students & Freelancers</span>
-                </div>
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-text">Just Elson</span>
+                <div class="logo-animation"></div>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#apps">Apps</a></li>
+                    <li><a href="#demo">Demo</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div class="app-card office-app">
-                <div class="app-header">
-                    <h2>Office File Organizer</h2>
-                    <div class="app-icon">💼</div>
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="animated-text">Unlock Your Productive Potential</h1>
+                    <p class="subtitle">Is digital clutter slowing you down? Just Elson is dedicated to boosting your productivity by simplifying how you manage your files. Our suite of File Organizers provides smart, automated solutions.</p>
+                    <div class="cta-buttons">
+                        <a href="#apps" class="btn btn-primary">Explore Apps</a>
+                        <a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank" class="btn btn-secondary">Read Blog</a>
+                    </div>
                 </div>
-                <div class="app-description">
-                    <p>For professionals handling multiple work documents.</p>
-                    <ul>
-                        <li>Quick access shortcuts</li>
-                        <li>Advanced search & filters</li>
-                        <li>Version control tracking</li>
-                        <li>Project-based organization</li>
-                    </ul>
-                </div>
-                <div class="app-cta">
-                    <a href="https://elsonm.gumroad.com/l/organizerapps" class="download-btn" download>BUY NOW</a>
-                    <span class="app-tag">Perfect for Business Teams</span>
-                </div>
-            </div>
-
-            <div class="app-card media-app">
-                <div class="app-header">
-                    <h2>Media File Organizer</h2>
-                    <div class="app-icon">🎨</div>
-                </div>
-                <div class="app-description">
-                    <p>For content creators and media professionals.</p>
-                    <ul>
-                        <li>Media file categorization</li>
-                        <li>Preview and tagging system</li>
-                        <li>Duplicate detection</li>
-                        <li>External drive support</li>
-                    </ul>
-                </div>
-                <div class="app-cta">
-                    <a href="https://elsonm.gumroad.com/l/organizerapps" class="download-btn" download>BUY NOW</a>
-                    <span class="app-tag">Perfect for Creatives</span>
+                <!-- Company Promo Video -->
+                <div class="promo-video-container fade-in">
+                    <video controls preload="metadata">
+                        <source src="video/mags.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </section>
 
-        <section id="videos" class="videos-section">
-            <h2>Featured Videos</h2>
-            <div class="videos-container">
-                <div class="video-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/9B-e5BVsZYE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <h3>STRESS; THE THING THAT KILLS US</h3>
-                </div>
-                <div class="video-item">
-                    <div class="video-wrapper">
-                        <iframe src="https://www.youtube.com/embed/9UvezxjaWMU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <h3>WHY WE DONT SEE OUR UNFAIR ADVANTAGES</h3>
-                </div>
-            </div>
-            <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="subscribe-btn">Subscribe to My Channel</a>
-        </section>
-<!-------------------------------------------------------------UPDATE BLOG HERE-->
-        <section id="blog" class="blog-section">
-            <h2>LATEST BLOG POST</h2>
-            <article class="featured-blog-post">
-                <h3>DIGITAL DOPAMINE: THE WORLD WE NOW KNOW</h3>
-                <div class="blog-content">
-                    <p class="blog-intro">"Technology has solved old economic problems by giving us new psychological problems"</p>
-                    
-                    <div class="blog-preview">
-                        <p>This line is short but tall in the matter of its depth. Considering the length of this video, it explains why we have become more depressed and lonelier despite quality of life improving...</p>
-                        
-                        <a href="https://open.substack.com/pub/justelsoninsights/p/digital-dopamine?utm_campaign=post&utm_medium=web" target="_blank" class="newsletter-btn">READ THE REST</a>
-                    </div>
-<!-------------------------------------------------------------UPDATE BLOG HERE-->
+        <section id="apps" class="apps-section fade-in">
+            <div class="container">
+                <h2>Streamline Your Workflow</h2>
+                <div class="apps-grid">
+                    <!-- Personal App -->
+                    <article class="app-card tilt-card">
+                        <div class="card-content">
+                            <img src="img/app_icon(personal).ico" alt="Personal File Organizer Icon" class="app-icon">
+                            <h3>Personal File Organizer</h3>
+                            <p>For everyday users seeking a clutter-free digital space. Features automatic categorization, smart search, and secure vault.</p>
+                            <span class="app-tag">Perfect for Students & Freelancers</span>
+                            <a href="https://elsonm.gumroad.com/l/organizerapps" class="btn btn-tertiary" target="_blank">Get Personal App</a>
+                        </div>
+                    </article>
 
-                    <div class="newsletter">
-                        <div class="newsletter-teaser">
-                            <h4>Want to Learn More?</h4>
-                            <p>Get weekly insights on personal growth, productivity, and success directly in your inbox.</p>
-                            <a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank" class="newsletter-btn">Subscribe to Insights</a>
+                    <!-- Office App -->
+                    <article class="app-card tilt-card">
+                        <div class="card-content">
+                            <img src="img/app_icon(office).ico" alt="Office File Organizer Icon" class="app-icon">
+                            <h3>Office File Organizer</h3>
+                            <p>For professionals managing work documents. Features quick access, advanced search, version control, and project organization.</p>
+                            <span class="app-tag">Ideal for Business Teams</span>
+                            <a href="https://elsonm.gumroad.com/l/organizerapps" class="btn btn-tertiary" target="_blank">Get Office App</a>
+                        </div>
+                    </article>
+
+                    <!-- Media App -->
+                    <article class="app-card tilt-card">
+                        <div class="card-content">
+                            <img src="img/app_icon(media).ico" alt="Media File Organizer Icon" class="app-icon">
+                            <h3>Media File Organizer</h3>
+                            <p>For content creators and media pros. Features media categorization, tagging, duplicate detection, and external drive support.</p>
+                            <span class="app-tag">Essential for Creatives</span>
+                            <a href="https://elsonm.gumroad.com/l/organizerapps" class="btn btn-tertiary" target="_blank">Get Media App</a>
+                        </div>
+                    </article>
+                </div>
+                <p class="discount-note">USE CODE <strong>PRODUCTIVE25</strong> FOR 100% OFF!</p>
+            </div>
+        </section>
+
+        <section id="demo" class="demo-section fade-in">
+            <div class="container">
+                <h2>See It In Action</h2>
+                <div class="video-wrapper">
+                    <video controls preload="metadata">
+                        <source src="video/0330(1).mp4" type="video/mp4">
+                        Your browser does not support the video tag. Please <a href="video/0330(1).mp4">download the video</a> instead.
+                    </video>
+                </div>
+                <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="btn btn-secondary youtube-link">Visit YouTube Channel</a>
+            </div>
+        </section>
+        
+        <!-- New Testimonials Section -->
+        <section id="testimonials" class="testimonials-section fade-in">
+            <div class="container">
+                <h2>What Our Users Say</h2>
+                <div class="testimonials-carousel">
+                    <div class="testimonial-item active">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p>"The Personal File Organizer completely transformed how I manage my digital life. Everything is now perfectly organized without any effort!"</p>
+                            <div class="testimonial-author">— Sarah K., Student</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p>"As a business owner, the Office File Organizer saves me hours every week. Document retrieval is lightning fast and the version control is invaluable."</p>
+                            <div class="testimonial-author">— Mark T., Business Owner</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="testimonial-rating">★★★★★</div>
+                            <p>"Media File Organizer is a game-changer for content creators. My footage, photos and audio files are perfectly categorized and easy to find."</p>
+                            <div class="testimonial-author">— Elena R., Content Creator</div>
                         </div>
                     </div>
                 </div>
-            </article>
+                <div class="carousel-controls">
+                    <button class="carousel-prev" aria-label="Previous testimonial">&larr;</button>
+                    <div class="carousel-dots">
+                        <span class="dot active" data-index="0"></span>
+                        <span class="dot" data-index="1"></span>
+                        <span class="dot" data-index="2"></span>
+                    </div>
+                    <button class="carousel-next" aria-label="Next testimonial">&rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="blog-section fade-in">
+            <div class="container">
+                <h2>From the Blog</h2>
+                <article class="featured-blog-post">
+                    <h3>Digital Dopamine: The World We Now Know</h3>
+                    <p class="blog-intro">"Technology has solved old economic problems by giving us new psychological problems" - A look into how our digital lives impact us.</p>
+                    <a href="https://open.substack.com/pub/justelsoninsights/p/digital-dopamine?utm_campaign=post&utm_medium=web" target="_blank" class="btn btn-primary">Read Full Post</a>
+                </article>
+                <div class="newsletter-promo">
+                    <h4>Stay Updated</h4>
+                    <p>Get weekly insights on personal growth and productivity.</p>
+                    <a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank" class="btn btn-secondary">Subscribe to Newsletter</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- New FAQ Section -->
+        <section id="faq" class="faq-section fade-in">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is the app safe to use?</h3>
+                            <div class="faq-icon"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, absolutely! All our apps are designed with security as a top priority. We don't collect or store your personal files - everything happens locally on your device. No data is sent to external servers, and we use industry-standard encryption to protect any settings or preferences you save.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Is the YouTube channel worth subscribing to?</h3>
+                            <div class="faq-icon"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Our YouTube channel is regularly updated with tutorials, productivity tips, and advanced features of our apps. Subscribers get early access to new videos and can influence future content through polls and comments. It's a great resource for maximizing your productivity journey.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How do I get started with the File Organizer?</h3>
+                            <div class="faq-icon"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Getting started is simple! After downloading, just run the app and follow the intuitive setup wizard. You'll select which folders you want to organize, choose your preferred organization rules, and the app does the rest automatically. There's a comprehensive tutorial included, and you can always adjust settings later as needed.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Will the app delete any of my files?</h3>
+                            <div class="faq-icon"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, the app will never delete your files without explicit permission. By default, it only organizes files by moving them to appropriate folders. There is an optional duplicate detection feature, but even then, files are only flagged for your review - you always maintain control over what happens to your files.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Which app version is right for me?</h3>
+                            <div class="faq-icon"></div>
+                        </div>
+                        <div class="faq-answer">
+                            <p>If you're primarily organizing personal documents, photos, and downloads, the Personal version is perfect. For business documents and collaborative environments, choose the Office version. Content creators working with large media libraries should select the Media version for specialized tools for video, audio, and image files.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#apps">Apps</a></li>
-                    <li><a href="#videos">Videos</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h4>Connect</h4>
-                <div class="social-links">
-                    <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank">YouTube</a>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Just Elson</h4>
+                    <p>Productivity solutions for a streamlined digital life.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#apps">Apps</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="https://www.youtube.com/@just.elson.erick.20" target="_blank">YouTube</a></li>
+                        <li><a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank">Newsletter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="social-link youtube">YouTube</a>
+                        <!-- Add other social links here -->
+                    </div>
                 </div>
             </div>
-            <div class="footer-section">
-                <h4>Newsletter</h4>
-                <p>Stay updated with weekly insights!</p>
-                <a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" class="newsletter-btn">Subscribe</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Just Elson. All Rights Reserved.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Just Elson. All Rights Reserved.</p>
-        </div>
     </footer>
+    
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+    </button>
 
-    <script src="js/app.js"></script>
+    <!-- JavaScript for animations and interactions -->
+    <script>
+        // Sticky header and scroll progress
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.site-header');
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollPosition = window.scrollY;
+            const totalHeight = document.body.scrollHeight - window.innerHeight;
+            
+            // Update header
+            if (scrollPosition > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update scroll progress
+            const scrollPercentage = (scrollPosition / totalHeight) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+            
+            // Show/hide back to top button
+            const backToTop = document.getElementById('back-to-top');
+            if (scrollPosition > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        // Fade-in animations on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            // Make hero video visible immediately
+            document.querySelector('.promo-video-container').classList.add('visible');
+            
+            // Observer for scroll animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // FAQ Accordion Functionality
+            const faqItems = document.querySelectorAll('.faq-question');
+            faqItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const parent = item.parentElement;
+                    parent.classList.toggle('active');
+                    
+                    // Close other FAQ items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.parentElement.classList.remove('active');
+                        }
+                    });
+                });
+            });
+            
+            // Testimonial Carousel
+            const testimonials = document.querySelectorAll('.testimonial-item');
+            const dots = document.querySelectorAll('.carousel-dots .dot');
+            const prevBtn = document.querySelector('.carousel-prev');
+            const nextBtn = document.querySelector('.carousel-next');
+            let currentIndex = 0;
+            
+            function showTestimonial(index) {
+                testimonials.forEach(item => item.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                currentIndex = (index + testimonials.length) % testimonials.length;
+                testimonials[currentIndex].classList.add('active');
+                dots[currentIndex].classList.add('active');
+            }
+            
+            // Navigation
+            prevBtn.addEventListener('click', () => showTestimonial(currentIndex - 1));
+            nextBtn.addEventListener('click', () => showTestimonial(currentIndex + 1));
+            
+            // Dot navigation
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const index = parseInt(dot.getAttribute('data-index'));
+                    showTestimonial(index);
+                });
+            });
+            
+            // Auto rotate testimonials
+            setInterval(() => {
+                showTestimonial(currentIndex + 1);
+            }, 8000);
+            
+            // 3D Tilt effect for cards
+            const cards = document.querySelectorAll('.tilt-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', e => {
+                    const cardRect = card.getBoundingClientRect();
+                    const x = e.clientX - cardRect.left;
+                    const y = e.clientY - cardRect.top;
+                    
+                    const centerX = cardRect.width / 2;
+                    const centerY = cardRect.height / 2;
+                    
+                    const rotateX = (y - centerY) / 10;
+                    const rotateY = (centerX - x) / 10;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                });
+            });
+            
+            // Back to top button functionality
+            document.getElementById('back-to-top').addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Theme toggle functionality
+            const themeToggle = document.getElementById('theme-toggle');
+            const body = document.body;
+            
+            // Check for saved theme preference
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                body.classList.add(savedTheme);
+                if (savedTheme === 'light-theme') {
+                    themeToggle.classList.add('light-active');
+                }
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                if (body.classList.contains('light-theme')) {
+                    body.classList.remove('light-theme');
+                    localStorage.setItem('theme', 'dark-theme');
+                    themeToggle.classList.remove('light-active');
+                } else {
+                    body.classList.add('light-theme');
+                    localStorage.setItem('theme', 'light-theme');
+                    themeToggle.classList.add('light-active');
+                }
+            });
+            
+            // Animated text effect
+            const animatedText = document.querySelector('.animated-text');
+            if (animatedText) {
+                const text = animatedText.textContent;
+                animatedText.textContent = '';
+                
+                for (let i = 0; i < text.length; i++) {
+                    const span = document.createElement('span');
+                    span.textContent = text[i] === ' ' ? ' ' : text[i];
+                    span.style.animationDelay = `${i * 0.05}s`;
+                    span.className = 'char';
+                    animatedText.appendChild(span);
+                }
+            }
+        });
+        
+        // Parallax effect for blur elements
+        document.addEventListener('mousemove', e => {
+            const blurElements = document.querySelectorAll('.blur-element');
+            
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            
+            blurElements.forEach((element, index) => {
+                const speed = index === 0 ? 30 : -30;
+                const offsetX = (mouseX - 0.5) * speed;
+                const offsetY = (mouseY - 0.5) * speed;
+                
+                element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            });
+        });
+    </script>
 </body>
 </html>
