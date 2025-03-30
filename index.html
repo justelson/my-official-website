@@ -11,7 +11,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon -->
-    <link rel="icon" href="img/app_icon(personal).ico" type="image/x-icon">
+    <link rel="icon" href="img\t.png" type="image/x-png">
 </head>
 <body>
     <!-- Theme toggle button -->
@@ -39,7 +39,6 @@
                     <li><a href="#apps">Apps</a></li>
                     <li><a href="#demo">Demo</a></li>
                     <li><a href="#blog">Blog</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
             </nav>
@@ -50,7 +49,7 @@
         <section id="hero" class="hero-section">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="animated-text">Unlock Your Productive Potential</h1>
+                    <h1 class="title">Unlock Your Productive Potential</h1>
                     <p class="subtitle">Is digital clutter slowing you down? Just Elson is dedicated to boosting your productivity by simplifying how you manage your files. Our suite of File Organizers provides smart, automated solutions.</p>
                     <div class="cta-buttons">
                         <a href="#apps" class="btn btn-primary">Explore Apps</a>
@@ -59,10 +58,7 @@
                 </div>
                 <!-- Company Promo Video -->
                 <div class="promo-video-container fade-in">
-                    <video controls preload="metadata">
-                        <source src="video/mags.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dvwqklf-SxU" title="Company Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
@@ -112,54 +108,12 @@
             <div class="container">
                 <h2>See It In Action</h2>
                 <div class="video-wrapper">
-                    <video controls preload="metadata">
-                        <source src="video/0330(1).mp4" type="video/mp4">
-                        Your browser does not support the video tag. Please <a href="video/0330(1).mp4">download the video</a> instead.
-                    </video>
+                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/wXbz78ixv0w" title="Product Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="btn btn-secondary youtube-link">Visit YouTube Channel</a>
             </div>
         </section>
         
-        <!-- New Testimonials Section -->
-        <section id="testimonials" class="testimonials-section fade-in">
-            <div class="container">
-                <h2>What Our Users Say</h2>
-                <div class="testimonials-carousel">
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <div class="testimonial-rating">★★★★★</div>
-                            <p>"The Personal File Organizer completely transformed how I manage my digital life. Everything is now perfectly organized without any effort!"</p>
-                            <div class="testimonial-author">— Sarah K., Student</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="testimonial-rating">★★★★★</div>
-                            <p>"As a business owner, the Office File Organizer saves me hours every week. Document retrieval is lightning fast and the version control is invaluable."</p>
-                            <div class="testimonial-author">— Mark T., Business Owner</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="testimonial-rating">★★★★★</div>
-                            <p>"Media File Organizer is a game-changer for content creators. My footage, photos and audio files are perfectly categorized and easy to find."</p>
-                            <div class="testimonial-author">— Elena R., Content Creator</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-controls">
-                    <button class="carousel-prev" aria-label="Previous testimonial">&larr;</button>
-                    <div class="carousel-dots">
-                        <span class="dot active" data-index="0"></span>
-                        <span class="dot" data-index="1"></span>
-                        <span class="dot" data-index="2"></span>
-                    </div>
-                    <button class="carousel-next" aria-label="Next testimonial">&rarr;</button>
-                </div>
-            </div>
-        </section>
-
         <section id="blog" class="blog-section fade-in">
             <div class="container">
                 <h2>From the Blog</h2>
@@ -249,7 +203,6 @@
                         <li><a href="#apps">Apps</a></li>
                         <li><a href="#demo">Demo</a></li>
                         <li><a href="#blog">Blog</a></li>
-                        <li><a href="#testimonials">Reviews</a></li>
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="https://www.youtube.com/@just.elson.erick.20" target="_blank">YouTube</a></li>
                         <li><a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank">Newsletter</a></li>
@@ -343,37 +296,7 @@
             });
             
             // Testimonial Carousel
-            const testimonials = document.querySelectorAll('.testimonial-item');
-            const dots = document.querySelectorAll('.carousel-dots .dot');
-            const prevBtn = document.querySelector('.carousel-prev');
-            const nextBtn = document.querySelector('.carousel-next');
-            let currentIndex = 0;
-            
-            function showTestimonial(index) {
-                testimonials.forEach(item => item.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                currentIndex = (index + testimonials.length) % testimonials.length;
-                testimonials[currentIndex].classList.add('active');
-                dots[currentIndex].classList.add('active');
-            }
-            
-            // Navigation
-            prevBtn.addEventListener('click', () => showTestimonial(currentIndex - 1));
-            nextBtn.addEventListener('click', () => showTestimonial(currentIndex + 1));
-            
-            // Dot navigation
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    const index = parseInt(dot.getAttribute('data-index'));
-                    showTestimonial(index);
-                });
-            });
-            
-            // Auto rotate testimonials
-            setInterval(() => {
-                showTestimonial(currentIndex + 1);
-            }, 8000);
+            // Removed since testimonials section is removed
             
             // 3D Tilt effect for cards
             const cards = document.querySelectorAll('.tilt-card');
