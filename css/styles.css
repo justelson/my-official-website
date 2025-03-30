@@ -1,9 +1,12 @@
+/* Updated styles.css for a modern, Gemini-inspired UI */
 :root {
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #161616;
-    --text-primary: #ffffff;
-    --text-secondary: #a0a0a0;
-    --accent-color: #3b82f6;
+    --bg-primary: #f8f9fa; /* Lighter background */
+    --bg-secondary: #ffffff; /* White for cards/sections */
+    --text-primary: #202124; /* Dark gray for primary text */
+    --text-secondary: #5f6368; /* Lighter gray for secondary text */
+    --accent-color: #1a73e8;   /* Google Blue */
+    --border-color: #e0e0e0;  /* Subtle border color */
+    --hover-bg: #f1f3f4;      /* Light gray for hover states */
 }
 
 * {
@@ -13,110 +16,139 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif; /* Modern system fonts */
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Smoother fonts on WebKit */
+    -moz-osx-font-smoothing: grayscale;  /* Smoother fonts on Firefox */
 }
 
-.cursor-blur {
-    position: fixed;
-    pointer-events: none;
-    background: radial-gradient(600px circle at var(--x, 0px) var(--y, 0px), rgba(29, 78, 216, 0.15), transparent 80%);
-    z-index: 99;
-}
+/* Remove cursor blur effect for a cleaner look */
+/* .cursor-blur { ... } */
 
 .main-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: rgba(22, 22, 22, 0.8);
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid var(--border-color); /* Subtle bottom border */
 }
 
 .main-nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.4rem; /* Slightly smaller */
+    font-weight: 600;  /* Semi-bold */
     color: var(--text-primary);
 }
 
 .main-nav ul {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap */
 }
 
 .main-nav ul li a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 500; /* Medium weight */
+    transition: color 0.2s ease-in-out;
 }
 
 .main-nav ul li a:hover {
-    color: var(--text-primary);
+    color: var(--accent-color); /* Use accent color for hover */
 }
 
 .app-showcase {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+    margin: 2rem auto; /* Add top margin */
+    padding: 0 2rem; /* Consistent horizontal padding */
 }
 
 #hero {
     text-align: center;
-    padding: 4rem 0;
+    padding: 6rem 1rem; /* Increased padding */
+    margin-bottom: 4rem; /* Add space below hero */
 }
 
 #hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.2rem; /* Slightly larger */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
 }
 
 #hero p {
     color: var(--text-secondary);
+    font-size: 1.1rem; /* Slightly larger */
+    max-width: 600px; /* Limit width */
+    margin: 0 auto 2rem auto; /* Center and add bottom margin */
 }
+
+#hero h2 { /* Style the discount code */
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    background-color: rgba(26, 115, 232, 0.1); /* Light blue background */
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    display: inline-block;
+}
+
 
 .apps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* Use auto-fit for responsiveness */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-bottom: 4rem; /* Space below apps */
 }
 
 .app-card {
     background-color: var(--bg-secondary);
     border-radius: 12px;
     padding: 2rem;
-    transition: transform 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color); /* Subtle border */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack content vertically */
 }
 
 .app-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* Softer shadow */
 }
 
 .app-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Align items to the top */
     margin-bottom: 1.5rem;
 }
 
 .app-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem; /* Slightly adjusted size */
+    font-weight: 600;
 }
 
 .app-icon {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Slightly smaller icon */
+    margin-left: 1rem; /* Add space to the left */
+}
+
+.app-description {
+    flex-grow: 1; /* Allow description to take available space */
+    margin-bottom: 1.5rem; /* Space before CTA */
 }
 
 .app-description p {
     margin-bottom: 1rem;
     color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
 .app-description ul {
@@ -125,84 +157,95 @@ body {
 }
 
 .app-description ul li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    padding-left: 1.7rem;
     position: relative;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
 }
 
 .app-description ul li:before {
     content: '✓';
     position: absolute;
     left: 0;
+    top: 1px; /* Align checkmark */
     color: var(--accent-color);
+    font-weight: bold;
 }
 
 .app-cta {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: auto; /* Push CTA to the bottom */
+    padding-top: 1rem; /* Add padding above CTA */
+    border-top: 1px solid var(--border-color); /* Separator line */
 }
 
 .download-btn {
     background-color: var(--accent-color);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.4rem; /* Adjusted padding */
     text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s;
+    border-radius: 8px; /* More rounded corners */
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    border: none; /* Remove default border */
 }
 
 .download-btn:hover {
-    background-color: #2563eb;
+    background-color: #185abc; /* Darker blue on hover */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .app-tag {
     color: var(--text-secondary);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-    .apps-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* Existing styles from previous CSS */
-
-/* Videos Section Styles */
+/* Videos Section */
 .videos-section {
     margin-top: 4rem;
+    padding: 3rem 1rem; /* Add padding */
+    background-color: var(--bg-secondary); /* White background */
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
     text-align: center;
+    margin-bottom: 4rem; /* Space below videos */
 }
 
 .videos-section h2 {
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem; /* Adjusted size */
+    font-weight: 600;
 }
 
 .videos-container {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    text-align: left; /* Align text left within cards */
 }
 
 .video-item {
-    flex: 0 1 calc(50% - 1rem);
-    background-color: var(--bg-secondary);
+    background-color: #ffffff; /* Ensure white background */
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .video-item:hover {
-    transform: scale(1.02);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
 }
 
 .video-wrapper {
     position: relative;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #f0f0f0; /* Placeholder background */
 }
 
 .video-wrapper iframe {
@@ -211,101 +254,147 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
+    border: none; /* Remove iframe border */
 }
 
 .video-item h3 {
-    padding: 1rem;
-    background-color: var(--bg-secondary);
+    padding: 1rem 1.2rem;
     margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    background-color: #f8f9fa; /* Light background for title */
+    border-top: 1px solid var(--border-color);
 }
 
 .subscribe-btn {
-    display: inline-block;
+    /* Use the same style as download-btn */
     background-color: var(--accent-color);
     color: white;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block; /* Needed for margin */
+    margin-top: 1rem; /* Add space above */
+    border: none;
 }
 
 .subscribe-btn:hover {
-    background-color: #2563eb;
+    background-color: #185abc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Blog Section Styles */
+/* Blog Section */
 .blog-section {
     margin-top: 4rem;
     background-color: var(--bg-secondary);
     border-radius: 12px;
-    padding: 2rem;
+    padding: 3rem 2rem; /* Increased padding */
+    border: 1px solid var(--border-color);
+    margin-bottom: 4rem; /* Space below blog */
 }
 
-.blog-section h2 {
+.blog-section > h2 { /* Target only the main section title */
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .featured-blog-post h3 {
     color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
-.blog-intro, .preview-content p {
-    margin-bottom: 1rem;
+.blog-intro {
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1rem;
 }
 
-.highlight {
-    background-color: rgba(59, 130, 246, 0.1);
-    border-left: 4px solid var(--accent-color);
-    padding: 1rem;
-    margin: 1rem 0;
+.blog-preview p,
+.full-blog-content p { /* Style paragraphs in preview and full content */
+    margin-bottom: 1rem;
     color: var(--text-primary);
+    line-height: 1.7; /* Increase line height for readability */
+}
+
+/* Remove highlight style if not needed or restyle */
+/* .highlight { ... } */
+
+.newsletter {
+    margin-top: 2.5rem; /* Add space above newsletter */
+    border-top: 1px solid var(--border-color);
+    padding-top: 2rem;
 }
 
 .newsletter-teaser {
-    background-color: rgba(22, 22, 22, 0.5);
+    background-color: var(--bg-primary); /* Light background */
     border-radius: 8px;
-    padding: 1.5rem;
+    padding: 1.5rem 2rem;
     text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.newsletter-teaser h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.newsletter-teaser p {
+    color: var(--text-secondary);
+    margin-bottom: 1.2rem;
 }
 
 .newsletter-btn {
-    display: inline-block;
+    /* Use the same style as download-btn */
     background-color: var(--accent-color);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     text-decoration: none;
-    border-radius: 6px;
-    margin-top: 1rem;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    display: inline-block;
+    border: none;
 }
 
 .newsletter-btn:hover {
-    background-color: #2563eb;
+    background-color: #185abc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer Styles */
+
+/* Footer */
 .site-footer {
-    background-color: rgba(22, 22, 22, 0.8);
-    backdrop-filter: blur(10px);
+    background-color: #ffffff; /* White background */
     padding: 3rem 5%;
-    margin-top: 4rem;
+    margin-top: 5rem; /* Increased top margin */
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary); /* Use secondary text color */
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-}
-
-.footer-section {
-    flex: 1;
+    display: grid; /* Use grid for better alignment */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+    gap: 3rem; /* Increased gap */
+    max-width: 1200px;
+    margin: 0 auto; /* Center content */
+    padding-bottom: 2rem; /* Space before bottom */
 }
 
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--text-primary);
+    color: var(--text-primary); /* Use primary text color for headings */
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .footer-section ul {
@@ -313,72 +402,120 @@ body {
     padding: 0;
 }
 
-.footer-section ul li, .footer-section .social-links a {
-    margin-bottom: 0.5rem;
+.footer-section ul li,
+.footer-section .social-links a {
+    margin-bottom: 0.7rem; /* Slightly increased spacing */
 }
 
 .footer-section a {
     color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.3s;
+    transition: color 0.2s ease;
 }
 
 .footer-section a:hover {
-    color: var(--text-primary);
+    color: var(--accent-color); /* Use accent color on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.footer-section p {
+    margin-bottom: 1rem; /* Add margin to paragraph */
+    font-size: 0.9rem;
+}
+
+.footer-section .newsletter-btn { /* Style footer subscribe button */
+    background-color: transparent;
+    color: var(--accent-color);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.footer-section .newsletter-btn:hover {
+    background-color: rgba(26, 115, 232, 0.1); /* Light blue background on hover */
+    color: #185abc; /* Darker blue text */
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
     color: var(--text-secondary);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .videos-container {
-        flex-direction: column;
-    }
-
-    .video-item {
-        flex: 1 1 100%;
-    }
-
-    .footer-content {
-        flex-direction: column;
-    }
-}
-
-
-/* Add to existing styles.css */
-.read-more-btn {
-    background-color: var(--accent-color);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.read-more-btn:hover {
-    background-color: #2563eb;
-}
-
-.full-blog-content {
-    background-color: rgba(22, 22, 22, 0.5);
-    padding: 1.5rem;
+/* Blog Read More Functionality (from app.js) */
+.blog-preview .newsletter-btn { /* Target "READ THE REST" */
+    /* Style like other buttons */
+    background-color: transparent;
+    color: var(--accent-color);
+    padding: 0.6rem 1.2rem;
+    border: 1px solid var(--accent-color);
     border-radius: 8px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer; /* Make it look clickable */
+    text-align: center;
+}
+
+.blog-preview .newsletter-btn:hover {
+    background-color: rgba(26, 115, 232, 0.1);
+    color: #185abc;
+}
+
+/* Ensure full blog content display works */
+#full-blog-content {
+    display: none; /* Hidden by default */
     margin-top: 1rem;
 }
 
-.full-article-link {
+.full-article-link { /* Link within the expanded blog */
     color: var(--accent-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .full-article-link:hover {
     text-decoration: underline;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+    #hero p {
+        font-size: 1rem;
+    }
+    .main-nav {
+        padding: 1rem 3%;
+    }
+    .main-nav ul {
+        gap: 1.5rem; /* Smaller gap on mobile */
+    }
+    .app-showcase {
+        padding: 0 1rem; /* Less padding on mobile */
+    }
+    .apps-grid, .videos-container {
+        grid-template-columns: 1fr; /* Stack cards on smaller screens */
+        gap: 1.5rem;
+    }
+    .app-cta {
+        flex-direction: column; /* Stack button and tag */
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .footer-content {
+        grid-template-columns: 1fr; /* Stack footer sections */
+        gap: 2rem;
+    }
+     .blog-section, .videos-section {
+        padding: 2rem 1rem;
+    }
 }
