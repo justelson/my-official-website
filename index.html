@@ -11,7 +11,8 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon -->
-    <link rel="icon" href="img\t.png" type="image/x-png">
+    <!-- MODIFIED: Correct path separator and type -->
+    <link rel="icon" href="img/t.png" type="image/png">
 </head>
 <body>
     <!-- Theme toggle button -->
@@ -19,10 +20,10 @@
         <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79 1.42-1.41zM4 10.5H1v2h3v-2zm9-9.95h-2V3.5h2V.55zm7.45 3.91l-1.41-1.41-1.79 1.79 1.41 1.41 1.79-1.79zm-3.21 13.7l1.79 1.8 1.41-1.41-1.8-1.79-1.4 1.4zM20 10.5v2h3v-2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm-1 16.95h2V19.5h-2v2.95zm-7.45-3.91l1.41 1.41 1.79-1.79-1.41-1.41-1.79 1.79z"/></svg>
         <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"/></svg>
     </button>
-    
+
     <!-- Scroll progress indicator -->
     <div class="scroll-progress"></div>
-    
+
     <!-- Animated background blur elements -->
     <div class="blur-element blur-1"></div>
     <div class="blur-element blur-2"></div>
@@ -58,7 +59,8 @@
                 </div>
                 <!-- Company Promo Video -->
                 <div class="promo-video-container fade-in">
-                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dvwqklf-SxU" title="Company Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- MODIFIED: Added loading="lazy" -->
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/dvwqklf-SxU" title="Company Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
             </div>
         </section>
@@ -70,6 +72,7 @@
                     <!-- Personal App -->
                     <article class="app-card tilt-card">
                         <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(personal).ico" alt="Personal File Organizer Icon" class="app-icon">
                             <h3>Personal File Organizer</h3>
                             <p>For everyday users seeking a clutter-free digital space. Features automatic categorization, smart search, and secure vault.</p>
@@ -81,6 +84,7 @@
                     <!-- Office App -->
                     <article class="app-card tilt-card">
                         <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(office).ico" alt="Office File Organizer Icon" class="app-icon">
                             <h3>Office File Organizer</h3>
                             <p>For professionals managing work documents. Features quick access, advanced search, version control, and project organization.</p>
@@ -92,6 +96,7 @@
                     <!-- Media App -->
                     <article class="app-card tilt-card">
                         <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(media).ico" alt="Media File Organizer Icon" class="app-icon">
                             <h3>Media File Organizer</h3>
                             <p>For content creators and media pros. Features media categorization, tagging, duplicate detection, and external drive support.</p>
@@ -108,12 +113,13 @@
             <div class="container">
                 <h2>See It In Action</h2>
                 <div class="video-wrapper">
-                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/wXbz78ixv0w" title="Product Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <!-- MODIFIED: Added loading="lazy" -->
+                    <iframe width="100%" height="450" src="https://www.youtube.com/embed/wXbz78ixv0w" title="Product Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
                 </div>
                 <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="btn btn-secondary youtube-link">Visit YouTube Channel</a>
             </div>
         </section>
-        
+
         <section id="blog" class="blog-section fade-in">
             <div class="container">
                 <h2>From the Blog</h2>
@@ -129,7 +135,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- New FAQ Section -->
         <section id="faq" class="faq-section fade-in">
             <div class="container">
@@ -144,7 +150,7 @@
                             <p>Yes, absolutely! All our apps are designed with security as a top priority. We don't collect or store your personal files - everything happens locally on your device. No data is sent to external servers, and we use industry-standard encryption to protect any settings or preferences you save.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Is the YouTube channel worth subscribing to?</h3>
@@ -154,7 +160,7 @@
                             <p>Yes! Our YouTube channel is regularly updated with tutorials, productivity tips, and advanced features of our apps. Subscribers get early access to new videos and can influence future content through polls and comments. It's a great resource for maximizing your productivity journey.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>How do I get started with the File Organizer?</h3>
@@ -164,7 +170,7 @@
                             <p>Getting started is simple! After downloading, just run the app and follow the intuitive setup wizard. You'll select which folders you want to organize, choose your preferred organization rules, and the app does the rest automatically. There's a comprehensive tutorial included, and you can always adjust settings later as needed.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Will the app delete any of my files?</h3>
@@ -174,7 +180,7 @@
                             <p>No, the app will never delete your files without explicit permission. By default, it only organizes files by moving them to appropriate folders. There is an optional duplicate detection feature, but even then, files are only flagged for your review - you always maintain control over what happens to your files.</p>
                         </div>
                     </div>
-                    
+
                     <div class="faq-item">
                         <div class="faq-question">
                             <h3>Which app version is right for me?</h3>
@@ -217,36 +223,37 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Just Elson. All Rights Reserved.</p>
+                <p>© 2025 Just Elson. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-    
+
     <!-- Back to top button -->
     <button id="back-to-top" class="back-to-top" aria-label="Back to top">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
     </button>
 
     <!-- JavaScript for animations and interactions -->
-    <script>
+    <!-- MODIFIED: Added defer attribute -->
+    <script defer>
         // Sticky header and scroll progress
         window.addEventListener('scroll', function() {
             const header = document.querySelector('.site-header');
             const scrollProgress = document.querySelector('.scroll-progress');
             const scrollPosition = window.scrollY;
             const totalHeight = document.body.scrollHeight - window.innerHeight;
-            
+
             // Update header
             if (scrollPosition > 100) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-            
+
             // Update scroll progress
             const scrollPercentage = (scrollPosition / totalHeight) * 100;
             scrollProgress.style.width = scrollPercentage + '%';
-            
+
             // Show/hide back to top button
             const backToTop = document.getElementById('back-to-top');
             if (scrollPosition > 300) {
@@ -255,72 +262,84 @@
                 backToTop.classList.remove('visible');
             }
         });
-        
+
         // Fade-in animations on scroll
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
-            
-            // Make hero video visible immediately
-            document.querySelector('.promo-video-container').classList.add('visible');
-            
+
+            // Make hero video visible immediately - Already handled by Intersection Observer logic below
+
             // Observer for scroll animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // Stop observing once visible
                     }
                 });
             }, {
-                threshold: 0.1
+                threshold: 0.1 // Trigger when 10% of the element is visible
             });
-            
+
             fadeElements.forEach(el => {
                 observer.observe(el);
             });
-            
+
+             // Make hero promo video container immediately visible since it's likely above the fold
+             const heroVideo = document.querySelector('.promo-video-container');
+             if (heroVideo) {
+                 heroVideo.classList.add('visible'); // Add visible class directly
+                 observer.unobserve(heroVideo); // No need for the observer if we make it visible immediately
+             }
+
+
             // FAQ Accordion Functionality
             const faqItems = document.querySelectorAll('.faq-question');
             faqItems.forEach(item => {
                 item.addEventListener('click', () => {
                     const parent = item.parentElement;
-                    parent.classList.toggle('active');
-                    
-                    // Close other FAQ items
+                    const wasActive = parent.classList.contains('active');
+
+                    // Close all others first
                     faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.parentElement.classList.remove('active');
-                        }
+                        otherItem.parentElement.classList.remove('active');
                     });
+
+                    // Toggle the clicked one (open if it wasn't active)
+                    if (!wasActive) {
+                        parent.classList.add('active');
+                    }
+                     // If it was active, the loop above already closed it.
                 });
             });
-            
+
             // Testimonial Carousel
             // Removed since testimonials section is removed
-            
+
             // 3D Tilt effect for cards
             const cards = document.querySelectorAll('.tilt-card');
-            
+
             cards.forEach(card => {
                 card.addEventListener('mousemove', e => {
                     const cardRect = card.getBoundingClientRect();
                     const x = e.clientX - cardRect.left;
                     const y = e.clientY - cardRect.top;
-                    
+
                     const centerX = cardRect.width / 2;
                     const centerY = cardRect.height / 2;
-                    
-                    const rotateX = (y - centerY) / 10;
-                    const rotateY = (centerX - x) / 10;
-                    
-                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+
+                    // Reduced rotation intensity for potentially better performance/subtlety
+                    const rotateX = (y - centerY) / 15; // Was 10
+                    const rotateY = (centerX - x) / 15; // Was 10
+
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.03, 1.03, 1.03)`; // Slightly reduced scale
                 });
-                
+
                 card.addEventListener('mouseleave', () => {
                     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
                 });
             });
-            
+
             // Back to top button functionality
             document.getElementById('back-to-top').addEventListener('click', () => {
                 window.scrollTo({
@@ -328,61 +347,82 @@
                     behavior: 'smooth'
                 });
             });
-            
+
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
             const body = document.body;
-            
-            // Check for saved theme preference
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme) {
-                body.classList.add(savedTheme);
-                if (savedTheme === 'light-theme') {
+            const lightThemeClass = 'light-theme'; // Use constant for class name
+
+            // Function to apply theme
+            const applyTheme = (theme) => {
+                if (theme === lightThemeClass) {
+                    body.classList.add(lightThemeClass);
                     themeToggle.classList.add('light-active');
-                }
-            }
-            
-            themeToggle.addEventListener('click', () => {
-                if (body.classList.contains('light-theme')) {
-                    body.classList.remove('light-theme');
-                    localStorage.setItem('theme', 'dark-theme');
-                    themeToggle.classList.remove('light-active');
                 } else {
-                    body.classList.add('light-theme');
-                    localStorage.setItem('theme', 'light-theme');
-                    themeToggle.classList.add('light-active');
+                    body.classList.remove(lightThemeClass);
+                    themeToggle.classList.remove('light-active');
                 }
-            });
-            
-            // Animated text effect
-            const animatedText = document.querySelector('.animated-text');
-            if (animatedText) {
-                const text = animatedText.textContent;
-                animatedText.textContent = '';
-                
-                for (let i = 0; i < text.length; i++) {
-                    const span = document.createElement('span');
-                    span.textContent = text[i] === ' ' ? ' ' : text[i];
-                    span.style.animationDelay = `${i * 0.05}s`;
-                    span.className = 'char';
-                    animatedText.appendChild(span);
-                }
+                localStorage.setItem('theme', theme);
+            };
+
+            // Check for saved theme preference or system preference
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else if (prefersDark) {
+                 applyTheme('dark-theme'); // Default to dark if system prefers dark and no setting saved
+            } else {
+                 applyTheme('dark-theme'); // Default site theme is dark if no preference found
             }
+
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = body.classList.contains(lightThemeClass) ? 'dark-theme' : lightThemeClass;
+                applyTheme(currentTheme);
+            });
+
+            // Animated text effect (Optional - can be removed if not used or causes perf issues)
+            // const animatedText = document.querySelector('.animated-text');
+            // if (animatedText) {
+            //     const text = animatedText.textContent;
+            //     animatedText.textContent = '';
+
+            //     for (let i = 0; i < text.length; i++) {
+            //         const span = document.createElement('span');
+            //         span.textContent = text[i] === ' ' ? '\u00A0' : text[i]; // Use non-breaking space
+            //         span.style.animationDelay = `${i * 0.05}s`;
+            //         span.className = 'char';
+            //         animatedText.appendChild(span);
+            //     }
+            // }
         });
-        
+
         // Parallax effect for blur elements
+        // Consider throttling this if performance is impacted on lower-end devices
+        let animationFrameId = null;
         document.addEventListener('mousemove', e => {
-            const blurElements = document.querySelectorAll('.blur-element');
-            
-            const mouseX = e.clientX / window.innerWidth;
-            const mouseY = e.clientY / window.innerHeight;
-            
-            blurElements.forEach((element, index) => {
-                const speed = index === 0 ? 30 : -30;
-                const offsetX = (mouseX - 0.5) * speed;
-                const offsetY = (mouseY - 0.5) * speed;
-                
-                element.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            // Cancel previous frame to avoid running too often
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+
+            animationFrameId = requestAnimationFrame(() => {
+                const blurElements = document.querySelectorAll('.blur-element');
+                if (!blurElements.length) return; // Exit if no elements found
+
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+
+                blurElements.forEach((element, index) => {
+                    const speed = index === 0 ? 25 : -25; // Slightly reduced speed
+                    const offsetX = (mouseX - 0.5) * speed;
+                    const offsetY = (mouseY - 0.5) * speed;
+
+                    // Using translate3d might hint GPU acceleration
+                    element.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
+                });
             });
         });
     </script>
