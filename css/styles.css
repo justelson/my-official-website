@@ -5,41 +5,6 @@ Gemini-Inspired Dark Theme
 */
 
 :root {
-<<<<<<< Updated upstream
-    /* Color Variables */
-    --color-bg-primary: #0f1419;         /* Main background dark blue-black */
-    --color-bg-secondary: #1a1e24;       /* Cards, sections, header */
-    --color-bg-tertiary: #242a33;        /* Hover states, accents */
-    --color-text-primary: #f3f5f7;       /* Primary text color - almost white */
-    --color-text-secondary: #a1a7b0;     /* Secondary text - light gray */
-    --color-accent-primary: #8ab4f8;     /* Primary accent - light blue */
-    --color-accent-secondary: #4285f4;   /* Secondary accent - deeper blue */
-    --color-accent-gradient: linear-gradient(135deg, #4285f4, #8ab4f8); /* Gradient for buttons */
-    --color-card-shadow: rgba(0, 0, 0, 0.3);  /* Card shadow color */
-    
-    /* Typography */
-    --font-family: 'Roboto', sans-serif;
-    --font-size-base: 16px;
-    --font-weight-normal: 400;
-    --font-weight-medium: 500;
-    --font-weight-bold: 700;
-    
-    /* Spacing */
-    --space-xs: 0.5rem;   /* 8px */
-    --space-sm: 1rem;     /* 16px */
-    --space-md: 1.5rem;   /* 24px */
-    --space-lg: 2rem;     /* 32px */
-    --space-xl: 3rem;     /* 48px */
-    
-    /* Borders, Effects */
-    --border-radius-sm: 4px;
-    --border-radius-md: 8px;
-    --border-radius-lg: 12px;
-    --transition-speed: 0.3s;
-    --blur-effect: 60px;
-}
-
-=======
     /* Color Variables - Dark Theme (Only) */
     --color-bg-primary: #101218;         
     --color-bg-secondary: #181a21;       
@@ -86,7 +51,6 @@ Gemini-Inspired Dark Theme
 
 /* Remove Light Theme Variables - site is dark only now */
 
->>>>>>> Stashed changes
 /* Content Sections */
 .apps-section {
     background-color: var(--color-bg-secondary);
@@ -107,20 +71,6 @@ Gemini-Inspired Dark Theme
     background: var(--color-bg-tertiary);
     border-radius: var(--border-radius-lg);
     padding: var(--space-lg);
-<<<<<<< Updated upstream
-    /* MODIFIED: Added subtle glow shadow, combined with existing shadow */
-    box-shadow:
-        0 0 15px 2px rgba(138, 180, 248, 0.15), /* Glow effect */
-        0 10px 30px var(--color-card-shadow);  /* Original shadow */
-    /* MODIFIED: Included box-shadow in transition */
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-=======
     box-shadow: 0 8px 25px var(--color-card-shadow);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     position: relative;
@@ -130,7 +80,6 @@ Gemini-Inspired Dark Theme
     display: flex;
     flex-direction: column;
     animation: floatIn 0.8s ease-out backwards;
->>>>>>> Stashed changes
 }
 
 .app-card::before {
@@ -147,19 +96,11 @@ Gemini-Inspired Dark Theme
 }
 
 .app-card:hover {
-<<<<<<< Updated upstream
-    transform: translateY(-10px);
-     /* MODIFIED: Enhanced glow on hover */
-    box-shadow:
-        0 0 25px 5px rgba(138, 180, 248, 0.25), /* Brighter glow */
-        0 15px 35px var(--color-card-shadow); /* Slightly larger original shadow */
-=======
     transform: translateY(-8px);
     /* Use default glow, will be overridden by specific ID rules */
     box-shadow:
         0 0 20px 5px var(--color-glow-effect-default), 
         0 12px 30px var(--color-card-shadow); 
->>>>>>> Stashed changes
 }
 
 .app-card:hover::before {
@@ -171,26 +112,15 @@ Gemini-Inspired Dark Theme
     height: 60px;
     margin: 0 auto var(--space-md);
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
-<<<<<<< Updated upstream
-    transition: transform 0.5s ease;
-}
-
-.app-card:hover .app-icon {
-    transform: scale(1.1) rotate(5deg);
-=======
     transition: transform var(--transition-speed) ease;
->>>>>>> Stashed changes
 }
 
 .app-card h3 {
     color: var(--color-text-primary);
     font-size: 1.3rem;
     margin-bottom: var(--space-sm);
-<<<<<<< Updated upstream
-=======
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-heading);
->>>>>>> Stashed changes
 }
 
 .app-card p {
@@ -225,41 +155,23 @@ html {
 }
 
 body {
-<<<<<<< Updated upstream
-    font-family: var(--font-family);
-=======
     font-family: var(--font-family-body);
->>>>>>> Stashed changes
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
-<<<<<<< Updated upstream
-    /* Subtle background texture */
-    background-image: 
-        radial-gradient(circle at 15% 25%, rgba(66, 133, 244, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 85% 75%, rgba(138, 180, 248, 0.05) 0%, transparent 55%);
-=======
     /* Static Dark Gradient Background */
     background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
     font-weight: var(--font-weight-normal); 
->>>>>>> Stashed changes
 }
 
 .container {
     max-width: 1200px;
-<<<<<<< Updated upstream
-    width: 90%;
-    margin: 0 auto;
-    padding: 0 var(--space-sm);
-    position: relative;
-=======
     width: 92%; /* Slightly increased for better mobile spacing */
     margin: 0 auto;
     padding: 0 var(--space-sm); /* Reset padding to left/right only */
     position: relative; /* Reset position */
->>>>>>> Stashed changes
 }
 
 h1, h2, h3, h4 {
@@ -267,38 +179,26 @@ h1, h2, h3, h4 {
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
     margin-bottom: var(--space-md);
-<<<<<<< Updated upstream
-=======
     font-family: var(--font-family-heading); /* Headings font */
->>>>>>> Stashed changes
 }
 
 h1 {
     font-size: 3.5rem;
     margin-bottom: var(--space-sm);
     letter-spacing: -0.5px;
-<<<<<<< Updated upstream
-=======
     font-weight: var(--font-weight-bold);
->>>>>>> Stashed changes
 }
 
 h2 {
     font-size: 2.25rem;
     margin-bottom: var(--space-lg);
-<<<<<<< Updated upstream
-=======
     font-weight: var(--font-weight-bold);
->>>>>>> Stashed changes
 }
 
 h3 {
     font-size: 1.5rem;
     margin-bottom: var(--space-sm);
-<<<<<<< Updated upstream
-=======
     font-weight: var(--font-weight-bold);
->>>>>>> Stashed changes
 }
 
 p {
@@ -309,11 +209,7 @@ p {
 a {
     color: var(--color-accent-primary);
     text-decoration: none;
-<<<<<<< Updated upstream
-    transition: all var(--transition-speed) ease;
-=======
     transition: color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
->>>>>>> Stashed changes
 }
 
 a:hover {
@@ -337,66 +233,6 @@ section {
     position: relative;
 }
 
-<<<<<<< Updated upstream
-/* Floating Blur Elements - Gemini-style gradient orbs */
-.blur-element {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(var(--blur-effect));
-    opacity: 0.3;
-    z-index: -1;
-    transition: all 1.5s ease-out;
-}
-
-.blur-1 {
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(138, 180, 248, 0.3) 0%, rgba(66, 133, 244, 0.1) 50%, transparent 70%);
-    top: 15%;
-    left: -5%;
-    animation: float 14s ease-in-out infinite alternate;
-}
-
-.blur-2 {
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(138, 180, 248, 0.2) 0%, rgba(138, 180, 248, 0.05) 50%, transparent 70%);
-    bottom: 15%;
-    right: -5%;
-    animation: float 12s ease-in-out infinite alternate-reverse;
-}
-
-@keyframes float {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-    50% {
-        transform: translate(4%, 2%) scale(1.05);
-    }
-    100% {
-        transform: translate(-2%, 4%) scale(0.95);
-    }
-}
-
-/* Header & Navigation */
-.site-header {
-    background-color: rgba(26, 30, 36, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: var(--space-sm) 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    transition: all var(--transition-speed) ease;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.site-header.scrolled {
-    background-color: rgba(15, 20, 25, 0.95);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-=======
 /* Header & Navigation */
 .site-header {
     background-color: rgba(15, 20, 25, 0.8);
@@ -414,15 +250,12 @@ section {
 .site-header.scrolled {
     background-color: var(--color-bg-secondary); /* Solid background on scroll */
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Standard shadow */
->>>>>>> Stashed changes
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-<<<<<<< Updated upstream
-=======
     padding: var(--space-xs) var(--space-sm);
     position: sticky;
     top: 0;
@@ -430,7 +263,6 @@ section {
     width: 100%;
     transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
->>>>>>> Stashed changes
 }
 
 .logo {
@@ -440,10 +272,7 @@ section {
     display: flex;
     align-items: center;
     letter-spacing: -0.5px;
-<<<<<<< Updated upstream
-=======
     font-family: var(--font-family-heading); /* Logo font */
->>>>>>> Stashed changes
 }
 
 .main-nav ul {
@@ -453,44 +282,27 @@ section {
 
 .main-nav a {
     color: var(--color-text-secondary);
-<<<<<<< Updated upstream
-    font-weight: var(--font-weight-medium);
-    position: relative;
-    padding: var(--space-xs) 0;
-=======
     padding: var(--space-xs) var(--space-sm);
     position: relative;
     transition: color var(--transition-speed) ease;
->>>>>>> Stashed changes
 }
 
 .main-nav a:hover {
     color: var(--color-text-primary);
-<<<<<<< Updated upstream
-=======
     /* Remove transform/shadow from nav link hover for cleaner look */
     /* transform: translateY(-3px); */
     /* box-shadow: 0 0 15px 3px var(--color-glow-effect-default);  */
->>>>>>> Stashed changes
 }
 
 .main-nav a::after {
     content: '';
     position: absolute;
-<<<<<<< Updated upstream
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-accent-primary);
-=======
     width: 0;
     height: 2px;
     bottom: -5px;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--color-accent-primary);
->>>>>>> Stashed changes
     transition: width var(--transition-speed) ease;
 }
 
@@ -501,20 +313,12 @@ section {
 
 /* Hero Section */
 .hero-section {
-<<<<<<< Updated upstream
-    min-height: 100vh;
-=======
     min-height: 80vh; /* Adjust height slightly */
->>>>>>> Stashed changes
     display: flex;
     align-items: center;
     text-align: center;
     padding: var(--space-xl) 0;
-<<<<<<< Updated upstream
-    margin-top: 4rem;
-=======
     margin-top: 0; /* Remove margin-top now that header is sticky */
->>>>>>> Stashed changes
     overflow: hidden;
     position: relative;
 }
@@ -568,50 +372,6 @@ section {
 /* Buttons */
 .btn {
     display: inline-block;
-<<<<<<< Updated upstream
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: var(--font-weight-medium);
-    text-align: center;
-    border-radius: var(--border-radius-md);
-    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-.btn::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.6s ease, height 0.6s ease;
-    z-index: -1;
-}
-
-.btn:hover::after {
-    width: 200px;
-    height: 200px;
-}
-
-.btn-primary {
-    background: var(--color-accent-gradient);
-    color: white;
-    border: none;
-}
-
-.btn-primary:hover {
-    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
-    transform: translateY(-2px);
-    color: white;
-=======
     padding: var(--space-sm) var(--space-lg);
     border-radius: var(--border-radius-md); /* Use softer radius */
     font-weight: var(--font-weight-medium);
@@ -638,7 +398,6 @@ section {
 .btn-primary:hover {
     background: linear-gradient(135deg, #a3c6ff, #5c91f7);
     color: var(--color-bg-primary);
->>>>>>> Stashed changes
 }
 
 .btn-secondary {
@@ -648,11 +407,6 @@ section {
 }
 
 .btn-secondary:hover {
-<<<<<<< Updated upstream
-    background: rgba(138, 180, 248, 0.1);
-    box-shadow: 0 5px 15px rgba(138, 180, 248, 0.1);
-    transform: translateY(-2px);
-=======
     color: var(--color-text-primary);
     background-color: var(--color-bg-tertiary);
     /* Keep glow, remove specific styling from before */
@@ -669,7 +423,6 @@ section {
     /* margin-right: auto; */
     /* box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); */
     /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
->>>>>>> Stashed changes
 }
 
 .btn-tertiary {
@@ -679,13 +432,8 @@ section {
 }
 
 .btn-tertiary:hover {
-<<<<<<< Updated upstream
-    background: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px);
-=======
     background: rgba(138, 180, 248, 0.15);
     color: var(--color-accent-primary);
->>>>>>> Stashed changes
 }
 
 /* Content Sections */
@@ -708,19 +456,11 @@ section {
     background: var(--color-bg-tertiary);
     border-radius: var(--border-radius-lg);
     padding: var(--space-lg);
-<<<<<<< Updated upstream
-    box-shadow: 0 10px 30px var(--color-card-shadow);
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-=======
     box-shadow: 0 8px 25px var(--color-card-shadow);
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
     position: relative;
     overflow: hidden;
     border: 1px solid var(--color-border-subtle);
->>>>>>> Stashed changes
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -740,16 +480,11 @@ section {
 }
 
 .app-card:hover {
-<<<<<<< Updated upstream
-    transform: translateY(-10px);
-    box-shadow: 0 15px 35px var(--color-card-shadow);
-=======
     transform: translateY(-8px);
     /* Use default glow, will be overridden by specific ID rules */
     box-shadow:
         0 0 20px 5px var(--color-glow-effect-default), 
         0 12px 30px var(--color-card-shadow); 
->>>>>>> Stashed changes
 }
 
 .app-card:hover::before {
@@ -761,26 +496,15 @@ section {
     height: 60px;
     margin: 0 auto var(--space-md);
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
-<<<<<<< Updated upstream
-    transition: transform 0.5s ease;
-}
-
-.app-card:hover .app-icon {
-    transform: scale(1.1) rotate(5deg);
-=======
     transition: transform var(--transition-speed) ease;
->>>>>>> Stashed changes
 }
 
 .app-card h3 {
     color: var(--color-text-primary);
     font-size: 1.3rem;
     margin-bottom: var(--space-sm);
-<<<<<<< Updated upstream
-=======
     font-weight: var(--font-weight-bold);
     font-family: var(--font-family-heading);
->>>>>>> Stashed changes
 }
 
 .app-card p {
@@ -802,15 +526,6 @@ section {
 
 .discount-note {
     text-align: center;
-<<<<<<< Updated upstream
-    font-size: 1.1rem;
-    background: linear-gradient(90deg, #ff9d6c, #ff6b6b);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin-top: var(--space-lg);
-    font-weight: var(--font-weight-bold);
-=======
     font-size: 1.25rem; /* Slightly larger */
     /* Revert gradient text, style as a block */
     /* background: linear-gradient(90deg, #ff9d6c, #ff6b6b); */
@@ -842,30 +557,12 @@ section {
     overflow: hidden;
     box-shadow: 0 15px 35px var(--color-card-shadow);
     border: 1px solid var(--color-border-subtle); 
->>>>>>> Stashed changes
 }
 
 /* Demo Section */
 .demo-section {
     position: relative;
     padding: var(--space-xl) 0;
-<<<<<<< Updated upstream
-}
-
-.video-wrapper {
-    max-width: 800px;
-    margin: 0 auto var(--space-lg);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all var(--transition-speed) ease;
-}
-
-.video-wrapper:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-=======
     margin: var(--space-xl) 0;
 }
 
@@ -921,7 +618,6 @@ section {
 /* Clean up the hover states for clarity */
 .app-card:hover, .featured-blog-post:hover, .faq-item:hover, .newsletter-promo:hover {
     transform: translateY(-5px);
->>>>>>> Stashed changes
 }
 
 /* Blog Section */
@@ -931,8 +627,6 @@ section {
     border-radius: var(--border-radius-lg);
     margin: var(--space-lg) 0;
     padding: var(--space-xl) var(--space-md);
-<<<<<<< Updated upstream
-=======
     width: 100%;
 }
 
@@ -940,23 +634,11 @@ section {
     max-width: 100%;
     width: 100%;
     padding: 0;
->>>>>>> Stashed changes
 }
 
 .featured-blog-post {
     background: var(--color-bg-tertiary);
     padding: var(--space-lg);
-<<<<<<< Updated upstream
-    border-radius: var(--border-radius-lg);
-    margin-bottom: var(--space-lg);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: all var(--transition-speed) ease;
-    position: relative;
-    overflow: hidden;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-=======
     border-radius: var(--border-radius-lg); /* Use softer radius */
     margin-bottom: var(--space-lg);
     position: relative;
@@ -968,7 +650,6 @@ section {
     margin: 0 0 var(--space-lg); /* Removed the auto margins */
     animation: floatInLeft 0.8s ease-out backwards;
     animation-delay: 0.2s;
->>>>>>> Stashed changes
 }
 
 .featured-blog-post::before {
@@ -977,36 +658,21 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-<<<<<<< Updated upstream
-    height: 100%;
-    background: linear-gradient(45deg, rgba(66, 133, 244, 0.03), rgba(138, 180, 248, 0.03));
-    opacity: 0;
-    transition: opacity var(--transition-speed) ease;
-=======
     height: 4px;
     background: var(--color-accent-gradient);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform var(--transition-speed) ease;
->>>>>>> Stashed changes
 }
 
 .featured-blog-post:hover {
     transform: translateY(-5px);
-<<<<<<< Updated upstream
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.featured-blog-post:hover::before {
-    opacity: 1;
-=======
     /* Use default glow */
     box-shadow: 0 0 18px 4px var(--color-glow-effect-default);
 }
 
 .featured-blog-post:hover::before {
     transform: scaleX(1);
->>>>>>> Stashed changes
 }
 
 .featured-blog-post h3 {
@@ -1025,16 +691,10 @@ section {
     background: var(--color-bg-tertiary);
     padding: var(--space-lg);
     border-radius: var(--border-radius-lg);
-<<<<<<< Updated upstream
-    max-width: 600px;
-    margin: var(--space-lg) auto 0;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-=======
     max-width: 100%; /* Removed the 600px constraint */
     width: 100%;
     margin: var(--space-lg) 0 0; /* Removed the auto margins */
     border: 1px solid var(--color-border-subtle);
->>>>>>> Stashed changes
 }
 
 .newsletter-promo h4 {
@@ -1042,11 +702,7 @@ section {
     margin-bottom: var(--space-sm);
 }
 
-<<<<<<< Updated upstream
-/* FAQ Section */
-=======
 /* Updated FAQ Section - Similar to the GIF */
->>>>>>> Stashed changes
 .faq-section {
     background-color: var(--color-bg-secondary);
     position: relative;
@@ -1056,18 +712,6 @@ section {
     overflow: hidden;
 }
 
-<<<<<<< Updated upstream
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: var(--color-bg-tertiary);
-    border-radius: var(--border-radius-md);
-    margin-bottom: var(--space-md);
-    border: 1px solid rgba(255, 255, 255, 0.03);
-=======
 .faq-section h2 {
     color: var(--color-faq-highlight);
     text-align: center;
@@ -1087,45 +731,22 @@ section {
     margin-bottom: var(--space-sm);
     border-radius: var(--border-radius-sm);
     border: none;
->>>>>>> Stashed changes
     overflow: hidden;
     transition: all var(--transition-speed) ease;
 }
 
 .faq-item:hover {
-<<<<<<< Updated upstream
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.faq-question {
-    padding: var(--space-md);
-=======
     background-color: var(--color-bg-primary);
     transform: translateX(5px); /* Slight shift right on hover */
 }
 
 .faq-question {
     padding: var(--space-md) var(--space-lg);
->>>>>>> Stashed changes
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-<<<<<<< Updated upstream
-}
-
-.faq-question h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0;
-    color: var(--color-text-primary);
-    transition: color var(--transition-speed) ease;
-}
-
-.faq-icon {
-    width: 20px;
-    height: 20px;
-=======
     border-bottom: 1px solid transparent;
     transition: all var(--transition-speed) ease;
 }
@@ -1142,33 +763,10 @@ section {
 .faq-icon {
     width: 16px;
     height: 16px;
->>>>>>> Stashed changes
     position: relative;
     transition: transform 0.3s ease;
 }
 
-<<<<<<< Updated upstream
-.faq-icon::before,
-.faq-icon::after {
-    content: '';
-    position: absolute;
-    background-color: var(--color-accent-primary);
-    border-radius: 1px;
-}
-
-.faq-icon::before {
-    width: 2px;
-    height: 20px;
-    left: 9px;
-    top: 0;
-}
-
-.faq-icon::after {
-    width: 20px;
-    height: 2px;
-    left: 0;
-    top: 9px;
-=======
 /* Replace plus/minus with chevron arrow */
 .faq-icon::before {
     display: none; /* Hide the vertical bar */
@@ -1185,205 +783,11 @@ section {
     top: 0;
     left: 3px;
     transition: transform 0.3s ease;
->>>>>>> Stashed changes
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
-<<<<<<< Updated upstream
-    transition: max-height 0.3s ease, padding 0.3s ease;
-}
-
-.faq-item.active .faq-answer {
-    max-height: 1000px; /* Large enough to cover answers */
-    padding: 0 var(--space-md) var(--space-md);
-}
-
-.faq-item.active .faq-icon::before {
-    transform: rotate(90deg);
-    opacity: 0;
-}
-
-.faq-item.active {
-    background: linear-gradient(45deg, rgba(66, 133, 244, 0.03), rgba(138, 180, 248, 0.03));
-}
-
-.faq-answer p {
-    margin-bottom: 0;
-    line-height: 1.6;
-}
-
-/* Testimonials Section */
-.testimonials-section {
-    position: relative;
-    padding: var(--space-xl) 0;
-}
-
-.testimonials-carousel {
-    max-width: 800px;
-    margin: 0 auto var(--space-lg);
-    position: relative;
-    height: 250px; /* Fixed height for testimonials */
-}
-
-.testimonial-item {
-    position: absolute;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    transform: translateX(50px);
-    pointer-events: none;
-}
-
-.testimonial-item.active {
-    opacity: 1;
-    transform: translateX(0);
-    z-index: 1;
-    pointer-events: auto;
-}
-
-.testimonial-content {
-    background: var(--color-bg-tertiary);
-    padding: var(--space-lg);
-    border-radius: var(--border-radius-lg);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.testimonial-content::before {
-    content: '"';
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 4rem;
-    opacity: 0.1;
-    color: var(--color-accent-primary);
-    font-family: Georgia, serif;
-}
-
-.testimonial-rating {
-    color: #FFD700;
-    font-size: 1.2rem;
-    margin-bottom: var(--space-sm);
-}
-
-.testimonial-author {
-    margin-top: var(--space-sm);
-    font-size: 0.9rem;
-    font-style: italic;
-    color: var(--color-accent-primary);
-    text-align: right;
-}
-
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: var(--space-md);
-}
-
-.carousel-prev,
-.carousel-next {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--color-text-primary);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-}
-
-.carousel-prev:hover,
-.carousel-next:hover {
-    background: rgba(138, 180, 248, 0.2);
-    color: var(--color-accent-primary);
-}
-
-.carousel-dots {
-    display: flex;
-    gap: 8px;
-    margin: 0 var(--space-md);
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-    transition: all var(--transition-speed) ease;
-}
-
-.dot.active,
-.dot:hover {
-    background: var(--color-accent-primary);
-}
-
-/* Theme Toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 2000;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(26, 30, 36, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(4px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.theme-toggle:hover {
-    background: rgba(138, 180, 248, 0.2);
-}
-
-.theme-toggle svg {
-    fill: var(--color-text-primary);
-    transition: fill 0.3s ease, transform 0.3s ease;
-}
-
-.sun-icon {
-    display: block;
-}
-
-.moon-icon {
-    display: none;
-}
-
-.theme-toggle.light-active .sun-icon {
-    display: none;
-}
-
-.theme-toggle.light-active .moon-icon {
-    display: block;
-}
-
-/* Scroll Progress Bar */
-.scroll-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3px;
-    background: var(--color-accent-gradient);
-    width: 0%;
-    z-index: 2000;
-    transition: width 0.1s ease-out;
-}
-
-/* Back to Top Button */
-=======
     transition: max-height 0.4s ease-in-out, padding 0.2s ease;
     background-color: var(--color-bg-primary);
     color: var(--color-text-secondary);
@@ -1763,7 +1167,6 @@ section {
 }
 
 /* Add back to top button styling */
->>>>>>> Stashed changes
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -1797,266 +1200,6 @@ section {
 
 .back-to-top:hover {
     transform: translateY(-5px);
-<<<<<<< Updated upstream
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Light Theme Overrides */
-body.light-theme {
-    --color-bg-primary: #f5f7fa;
-    --color-bg-secondary: #ffffff;
-    --color-bg-tertiary: #f0f4f8;
-    --color-text-primary: #333333;
-    --color-text-secondary: #6c757d;
-    --color-accent-primary: #4285f4;
-    --color-accent-secondary: #1a73e8;
-    --color-card-shadow: rgba(0, 0, 0, 0.1);
-}
-
-body.light-theme .blur-element {
-    opacity: 0.15;
-}
-
-/* Footer */
-.site-footer {
-    background-color: var(--color-bg-secondary);
-    color: var(--color-text-secondary);
-    padding: var(--space-xl) 0 var(--space-md);
-    position: relative;
-    margin-top: var(--space-xl);
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-lg);
-    margin-bottom: var(--space-lg);
-}
-
-.footer-col h4 {
-    color: var(--color-text-primary);
-    font-size: 1.1rem;
-    margin-bottom: var(--space-md);
-    position: relative;
-    display: inline-block;
-}
-
-.footer-col h4::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: var(--color-accent-primary);
-}
-
-.footer-col ul li {
-    margin-bottom: var(--space-sm);
-}
-
-.footer-col a {
-    color: var(--color-text-secondary);
-    transition: all var(--transition-speed) ease;
-}
-
-.footer-col a:hover {
-    color: var(--color-accent-primary);
-    transform: translateX(3px);
-    display: inline-block;
-}
-
-.social-links {
-    display: flex;
-    gap: var(--space-sm);
-}
-
-.social-links a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all var(--transition-speed) ease;
-}
-
-.social-links a:hover {
-    background: rgba(138, 180, 248, 0.1);
-    transform: translateY(-3px);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: var(--space-md);
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-/* Scroll animation classes for JS */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    html {
-        font-size: 15px;
-    }
-
-    h1 {
-        font-size: 2.5rem;
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .site-header .container {
-        flex-direction: column;
-        gap: var(--space-sm);
-        padding: var(--space-sm) 0;
-    }
-
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: var(--space-sm);
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: var(--space-sm);
-    }
-
-    .hero-section {
-        min-height: unset;
-        padding-top: calc(var(--space-xl) * 2);
-    }
-
-    .blur-element {
-        opacity: 0.2;
-    }
-
-    .apps-grid, 
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-col {
-        text-align: center;
-    }
-
-    .footer-col h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .faq-question h3 {
-        font-size: 1rem;
-    }
-    
-    .testimonial-content {
-        padding: var(--space-md);
-    }
-    
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-    }
-    
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/*
-==============================
-3D Tilt Effect & Card Styling
-==============================
-*/
-
-
-.tilt-card {
-    /* MODIFIED: Adjusted transition timing function */
-    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow var(--transition-speed) ease; /* Added box-shadow here too */
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-
-.tilt-card {
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
-    transform-style: preserve-3d;
-    perspective: 1000px;
-}
-
-.card-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--space-md);
-    border-radius: var(--border-radius-md);
-}
-
-/*
-==============================
-Animated Text Effect
-==============================
-*/
-
-.animated-text {
-    display: inline-block;
-    overflow: hidden;
-}
-
-.animated-text .char {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(50px);
-    animation: revealChar 0.5s forwards;
-}
-
-@keyframes revealChar {
-    to {
-=======
     box-shadow: 0 0 15px 3px var(--color-glow-effect-default);
 }
 
@@ -2121,43 +1264,11 @@ video::-webkit-media-controls {
         transform: translateY(30px);
     }
     100% {
->>>>>>> Stashed changes
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-<<<<<<< Updated upstream
-/*
-==============================
-Logo Animation
-==============================
-*/
-
-.logo {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.logo-text {
-    position: relative;
-    z-index: 1;
-}
-
-.logo-animation {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: var(--color-accent-gradient);
-    top: 50%;
-    left: -15px;
-    transform: translateY(-50%);
-    filter: blur(15px);
-    opacity: 0.5;
-    animation: pulse 3s infinite ease-in-out;
-=======
 @keyframes floatInRight {
     0% {
         opacity: 0;
@@ -2178,62 +1289,10 @@ Logo Animation
         opacity: 1;
         transform: translateX(0);
     }
->>>>>>> Stashed changes
 }
 
 @keyframes pulse {
     0% {
-<<<<<<< Updated upstream
-        transform: translateY(-50%) scale(1);
-        opacity: 0.5;
-    }
-    50% {
-        transform: translateY(-50%) scale(1.2);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translateY(-50%) scale(1);
-        opacity: 0.5;
-    }
-}
-
-/* Social Links Enhancement */
-.social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8px 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    margin-right: 8px;
-}
-
-.social-link:hover {
-    background: rgba(255, 255, 255, 0.1);
-    transform: translateY(-3px);
-}
-
-.youtube {
-    position: relative;
-    overflow: hidden;
-}
-
-.youtube::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, #ff0000, transparent);
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-}
-
-.youtube:hover::before {
-    transform: translateX(100%);
-=======
         transform: scale(1);
     }
     50% {
@@ -2367,5 +1426,4 @@ Logo Animation
     .social-links a, .hero-content, .discount-note, h2, .video-wrapper {
         animation: none !important;
     }
->>>>>>> Stashed changes
 }
