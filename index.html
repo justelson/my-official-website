@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just Elson - Productivity Solutions</title>
+<<<<<<< Updated upstream
     <!-- Google Fonts - Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,11 +29,31 @@
     <div class="blur-element blur-1"></div>
     <div class="blur-element blur-2"></div>
 
+=======
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="img/t.png" type="image/png">
+</head>
+<body>
+    <!-- Removed theme toggle button - site is dark only -->
+    
+    <!-- Scroll progress indicator -->
+    <div class="scroll-progress"></div>
+
+>>>>>>> Stashed changes
     <header class="site-header">
         <div class="container">
             <div class="logo">
                 <span class="logo-text">Just Elson</span>
+<<<<<<< Updated upstream
                 <div class="logo-animation"></div>
+=======
+>>>>>>> Stashed changes
             </div>
             <nav class="main-nav">
                 <ul>
@@ -58,6 +79,7 @@
                     </div>
                 </div>
                 <!-- Company Promo Video -->
+<<<<<<< Updated upstream
                 <div class="promo-video-container fade-in">
                     <!-- MODIFIED: Added loading="lazy" -->
                     <iframe width="100%" height="315" src="https://www.youtube.com/embed/dvwqklf-SxU" title="Company Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
@@ -66,14 +88,31 @@
         </section>
 
         <section id="apps" class="apps-section fade-in">
+=======
+                <!-- <div class="promo-video-container"> -->
+                    <!-- MODIFIED: Added loading="lazy" -->
+                    <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/dvwqklf-SxU" title="Company Promo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe> -->
+                <!-- </div> -->
+            </div>
+        </section>
+
+        <section id="apps" class="apps-section">
+>>>>>>> Stashed changes
             <div class="container">
                 <h2>Streamline Your Workflow</h2>
                 <div class="apps-grid">
                     <!-- Personal App -->
+<<<<<<< Updated upstream
                     <article class="app-card tilt-card">
                         <div class="card-content">
                              <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(personal).ico" alt="Personal File Organizer Icon" class="app-icon">
+=======
+                    <article class="app-card" id="app-personal">
+                        <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
+                            <img src="img/app_icon(personal).png" alt="Personal File Organizer Icon" class="app-icon" loading="lazy">
+>>>>>>> Stashed changes
                             <h3>Personal File Organizer</h3>
                             <p>For everyday users seeking a clutter-free digital space. Features automatic categorization, smart search, and secure vault.</p>
                             <span class="app-tag">Perfect for Students & Freelancers</span>
@@ -82,10 +121,17 @@
                     </article>
 
                     <!-- Office App -->
+<<<<<<< Updated upstream
                     <article class="app-card tilt-card">
                         <div class="card-content">
                              <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(office).ico" alt="Office File Organizer Icon" class="app-icon">
+=======
+                    <article class="app-card" id="app-office">
+                        <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
+                            <img src="img/app_icon(office).png" alt="Office File Organizer Icon" class="app-icon" loading="lazy">
+>>>>>>> Stashed changes
                             <h3>Office File Organizer</h3>
                             <p>For professionals managing work documents. Features quick access, advanced search, version control, and project organization.</p>
                             <span class="app-tag">Ideal for Business Teams</span>
@@ -94,10 +140,17 @@
                     </article>
 
                     <!-- Media App -->
+<<<<<<< Updated upstream
                     <article class="app-card tilt-card">
                         <div class="card-content">
                              <!-- MODIFIED: Correct path separator -->
                             <img src="img/app_icon(media).ico" alt="Media File Organizer Icon" class="app-icon">
+=======
+                    <article class="app-card" id="app-media">
+                        <div class="card-content">
+                             <!-- MODIFIED: Correct path separator -->
+                            <img src="img/app_icon(media).png" alt="Media File Organizer Icon" class="app-icon" loading="lazy">
+>>>>>>> Stashed changes
                             <h3>Media File Organizer</h3>
                             <p>For content creators and media pros. Features media categorization, tagging, duplicate detection, and external drive support.</p>
                             <span class="app-tag">Essential for Creatives</span>
@@ -109,18 +162,42 @@
             </div>
         </section>
 
+<<<<<<< Updated upstream
         <section id="demo" class="demo-section fade-in">
             <div class="container">
                 <h2>See It In Action</h2>
                 <div class="video-wrapper">
                     <!-- MODIFIED: Added loading="lazy" -->
                     <iframe width="100%" height="450" src="https://www.youtube.com/embed/wXbz78ixv0w" title="Product Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+=======
+        <section id="demo" class="demo-section">
+            <div class="container">
+                <h2>See It In Action</h2>
+                <div class="video-wrapper">
+                    <!-- Self-hosted video with fixed path to ensure playback -->
+                    <video 
+                        id="demo-video"
+                        width="100%" 
+                        height="auto" 
+                        controls 
+                        preload="metadata"
+                        src="demo%20video/HOW%20THE%20APPS%20WORK.mp4"
+                        class="demo-video"
+                    >
+                        <source src="demo%20video/HOW%20THE%20APPS%20WORK.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+>>>>>>> Stashed changes
                 </div>
                 <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="btn btn-secondary youtube-link">Visit YouTube Channel</a>
             </div>
         </section>
 
+<<<<<<< Updated upstream
         <section id="blog" class="blog-section fade-in">
+=======
+        <section id="blog" class="blog-section">
+>>>>>>> Stashed changes
             <div class="container">
                 <h2>From the Blog</h2>
                 <article class="featured-blog-post">
@@ -137,9 +214,15 @@
         </section>
 
         <!-- New FAQ Section -->
+<<<<<<< Updated upstream
         <section id="faq" class="faq-section fade-in">
             <div class="container">
                 <h2>Frequently Asked Questions</h2>
+=======
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>FAQ</h2>
+>>>>>>> Stashed changes
                 <div class="faq-container">
                     <div class="faq-item">
                         <div class="faq-question">
@@ -200,7 +283,11 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Just Elson</h4>
+<<<<<<< Updated upstream
                     <p>Productivity solutions for a streamlined digital life.</p>
+=======
+                    <p>Productivity solutions for a streamlined digital life. Our apps are designed to help you organize your files efficiently and boost your productivity.</p>
+>>>>>>> Stashed changes
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -210,15 +297,23 @@
                         <li><a href="#demo">Demo</a></li>
                         <li><a href="#blog">Blog</a></li>
                         <li><a href="#faq">FAQ</a></li>
+<<<<<<< Updated upstream
                         <li><a href="https://www.youtube.com/@just.elson.erick.20" target="_blank">YouTube</a></li>
+=======
+>>>>>>> Stashed changes
                         <li><a href="https://justelsoninsights.substack.com/?r=595rmm&utm_campaign=pub-share-checklist" target="_blank">Newsletter</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Connect</h4>
                     <div class="social-links">
+<<<<<<< Updated upstream
                         <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="social-link youtube">YouTube</a>
                         <!-- Add other social links here -->
+=======
+                        <a href="https://www.youtube.com/@just.elson.erick.20" target="_blank" class="social-link youtube">Subscribe to our YouTube channel</a>
+                        <!-- Add other social links when available -->
+>>>>>>> Stashed changes
                     </div>
                 </div>
             </div>
@@ -234,7 +329,11 @@
     </button>
 
     <!-- JavaScript for animations and interactions -->
+<<<<<<< Updated upstream
     <!-- MODIFIED: Added defer attribute -->
+=======
+    <script defer src="js/app.js"></script>
+>>>>>>> Stashed changes
     <script defer>
         // Sticky header and scroll progress
         window.addEventListener('scroll', function() {
@@ -263,6 +362,7 @@
             }
         });
 
+<<<<<<< Updated upstream
         // Fade-in animations on scroll
         document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
@@ -294,6 +394,10 @@
 
 
             // FAQ Accordion Functionality
+=======
+        // FAQ Accordion Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+>>>>>>> Stashed changes
             const faqItems = document.querySelectorAll('.faq-question');
             faqItems.forEach(item => {
                 item.addEventListener('click', () => {
@@ -309,6 +413,7 @@
                     if (!wasActive) {
                         parent.classList.add('active');
                     }
+<<<<<<< Updated upstream
                      // If it was active, the loop above already closed it.
                 });
             });
@@ -337,6 +442,9 @@
 
                 card.addEventListener('mouseleave', () => {
                     card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+=======
+                    // If it was active, the loop above already closed it.
+>>>>>>> Stashed changes
                 });
             });
 
@@ -347,6 +455,7 @@
                     behavior: 'smooth'
                 });
             });
+<<<<<<< Updated upstream
 
             // Theme toggle functionality
             const themeToggle = document.getElementById('theme-toggle');
@@ -424,6 +533,8 @@
                     element.style.transform = `translate3d(${offsetX}px, ${offsetY}px, 0)`;
                 });
             });
+=======
+>>>>>>> Stashed changes
         });
     </script>
 </body>

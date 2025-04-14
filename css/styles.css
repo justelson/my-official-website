@@ -5,6 +5,7 @@ Gemini-Inspired Dark Theme
 */
 
 :root {
+<<<<<<< Updated upstream
     /* Color Variables */
     --color-bg-primary: #0f1419;         /* Main background dark blue-black */
     --color-bg-secondary: #1a1e24;       /* Cards, sections, header */
@@ -38,6 +39,54 @@ Gemini-Inspired Dark Theme
     --blur-effect: 60px;
 }
 
+=======
+    /* Color Variables - Dark Theme (Only) */
+    --color-bg-primary: #101218;         
+    --color-bg-secondary: #181a21;       
+    --color-bg-tertiary: #252830;        
+    --color-text-primary: #f0f0f5;       
+    --color-text-secondary: #a0a0b0;     
+    --color-accent-primary: #8ab4f8;     
+    --color-accent-secondary: #4285f4;   
+    --color-accent-gradient: linear-gradient(135deg, #6a9eff, #4285f4);
+    --color-card-shadow: rgba(0, 0, 0, 0.4);  
+    --color-glow-effect-default: rgba(138, 180, 248, 0.25); 
+    --color-border-subtle: rgba(255, 255, 255, 0.07);
+    --color-faq-highlight: #e9ff04;      /* Bright yellow for FAQ highlight */
+    
+    /* Typography */
+    --font-family-body: 'Montserrat', sans-serif; 
+    --font-family-heading: 'Outfit', sans-serif;
+    --font-size-base: 16px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500; 
+    --font-weight-bold: 700;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;  
+    --space-sm: 1rem;    
+    --space-md: 1.75rem;  
+    --space-lg: 2.5rem;   
+    --space-xl: 3.5rem;   
+    
+    /* Borders, Effects */
+    --border-radius-sm: 6px;  
+    --border-radius-md: 10px; 
+    --border-radius-lg: 16px; 
+    --transition-speed: 0.3s;
+
+    /* App Glow Colors */
+    --color-glow-app-personal: rgba(168, 85, 247, 0.45); /* Purple */
+    --color-glow-app-office: rgba(59, 130, 246, 0.4);   /* Blue */
+    --color-glow-app-media: rgba(249, 115, 22, 0.45);    /* Orange */
+
+    /* Add border radius variable for extra large radius */
+    --border-radius-xl: 30px;
+}
+
+/* Remove Light Theme Variables - site is dark only now */
+
+>>>>>>> Stashed changes
 /* Content Sections */
 .apps-section {
     background-color: var(--color-bg-secondary);
@@ -58,6 +107,7 @@ Gemini-Inspired Dark Theme
     background: var(--color-bg-tertiary);
     border-radius: var(--border-radius-lg);
     padding: var(--space-lg);
+<<<<<<< Updated upstream
     /* MODIFIED: Added subtle glow shadow, combined with existing shadow */
     box-shadow:
         0 0 15px 2px rgba(138, 180, 248, 0.15), /* Glow effect */
@@ -70,6 +120,17 @@ Gemini-Inspired Dark Theme
     height: 100%;
     display: flex;
     flex-direction: column;
+=======
+    box-shadow: 0 8px 25px var(--color-card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border-subtle);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: floatIn 0.8s ease-out backwards;
+>>>>>>> Stashed changes
 }
 
 .app-card::before {
@@ -86,11 +147,19 @@ Gemini-Inspired Dark Theme
 }
 
 .app-card:hover {
+<<<<<<< Updated upstream
     transform: translateY(-10px);
      /* MODIFIED: Enhanced glow on hover */
     box-shadow:
         0 0 25px 5px rgba(138, 180, 248, 0.25), /* Brighter glow */
         0 15px 35px var(--color-card-shadow); /* Slightly larger original shadow */
+=======
+    transform: translateY(-8px);
+    /* Use default glow, will be overridden by specific ID rules */
+    box-shadow:
+        0 0 20px 5px var(--color-glow-effect-default), 
+        0 12px 30px var(--color-card-shadow); 
+>>>>>>> Stashed changes
 }
 
 .app-card:hover::before {
@@ -102,17 +171,26 @@ Gemini-Inspired Dark Theme
     height: 60px;
     margin: 0 auto var(--space-md);
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+<<<<<<< Updated upstream
     transition: transform 0.5s ease;
 }
 
 .app-card:hover .app-icon {
     transform: scale(1.1) rotate(5deg);
+=======
+    transition: transform var(--transition-speed) ease;
+>>>>>>> Stashed changes
 }
 
 .app-card h3 {
     color: var(--color-text-primary);
     font-size: 1.3rem;
     margin-bottom: var(--space-sm);
+<<<<<<< Updated upstream
+=======
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-heading);
+>>>>>>> Stashed changes
 }
 
 .app-card p {
@@ -147,24 +225,41 @@ html {
 }
 
 body {
+<<<<<<< Updated upstream
     font-family: var(--font-family);
+=======
+    font-family: var(--font-family-body);
+>>>>>>> Stashed changes
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     line-height: 1.6;
     min-height: 100vh;
     overflow-x: hidden;
+<<<<<<< Updated upstream
     /* Subtle background texture */
     background-image: 
         radial-gradient(circle at 15% 25%, rgba(66, 133, 244, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 85% 75%, rgba(138, 180, 248, 0.05) 0%, transparent 55%);
+=======
+    /* Static Dark Gradient Background */
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    font-weight: var(--font-weight-normal); 
+>>>>>>> Stashed changes
 }
 
 .container {
     max-width: 1200px;
+<<<<<<< Updated upstream
     width: 90%;
     margin: 0 auto;
     padding: 0 var(--space-sm);
     position: relative;
+=======
+    width: 92%; /* Slightly increased for better mobile spacing */
+    margin: 0 auto;
+    padding: 0 var(--space-sm); /* Reset padding to left/right only */
+    position: relative; /* Reset position */
+>>>>>>> Stashed changes
 }
 
 h1, h2, h3, h4 {
@@ -172,22 +267,38 @@ h1, h2, h3, h4 {
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
     margin-bottom: var(--space-md);
+<<<<<<< Updated upstream
+=======
+    font-family: var(--font-family-heading); /* Headings font */
+>>>>>>> Stashed changes
 }
 
 h1 {
     font-size: 3.5rem;
     margin-bottom: var(--space-sm);
     letter-spacing: -0.5px;
+<<<<<<< Updated upstream
+=======
+    font-weight: var(--font-weight-bold);
+>>>>>>> Stashed changes
 }
 
 h2 {
     font-size: 2.25rem;
     margin-bottom: var(--space-lg);
+<<<<<<< Updated upstream
+=======
+    font-weight: var(--font-weight-bold);
+>>>>>>> Stashed changes
 }
 
 h3 {
     font-size: 1.5rem;
     margin-bottom: var(--space-sm);
+<<<<<<< Updated upstream
+=======
+    font-weight: var(--font-weight-bold);
+>>>>>>> Stashed changes
 }
 
 p {
@@ -198,7 +309,11 @@ p {
 a {
     color: var(--color-accent-primary);
     text-decoration: none;
+<<<<<<< Updated upstream
     transition: all var(--transition-speed) ease;
+=======
+    transition: color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+>>>>>>> Stashed changes
 }
 
 a:hover {
@@ -222,6 +337,7 @@ section {
     position: relative;
 }
 
+<<<<<<< Updated upstream
 /* Floating Blur Elements - Gemini-style gradient orbs */
 .blur-element {
     position: absolute;
@@ -280,12 +396,41 @@ section {
 .site-header.scrolled {
     background-color: rgba(15, 20, 25, 0.95);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+=======
+/* Header & Navigation */
+.site-header {
+    background-color: rgba(15, 20, 25, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: var(--space-xs) var(--space-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); /* Softer shadow */
+}
+
+.site-header.scrolled {
+    background-color: var(--color-bg-secondary); /* Solid background on scroll */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* Standard shadow */
+>>>>>>> Stashed changes
 }
 
 .site-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+<<<<<<< Updated upstream
+=======
+    padding: var(--space-xs) var(--space-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+>>>>>>> Stashed changes
 }
 
 .logo {
@@ -295,6 +440,10 @@ section {
     display: flex;
     align-items: center;
     letter-spacing: -0.5px;
+<<<<<<< Updated upstream
+=======
+    font-family: var(--font-family-heading); /* Logo font */
+>>>>>>> Stashed changes
 }
 
 .main-nav ul {
@@ -304,23 +453,44 @@ section {
 
 .main-nav a {
     color: var(--color-text-secondary);
+<<<<<<< Updated upstream
     font-weight: var(--font-weight-medium);
     position: relative;
     padding: var(--space-xs) 0;
+=======
+    padding: var(--space-xs) var(--space-sm);
+    position: relative;
+    transition: color var(--transition-speed) ease;
+>>>>>>> Stashed changes
 }
 
 .main-nav a:hover {
     color: var(--color-text-primary);
+<<<<<<< Updated upstream
+=======
+    /* Remove transform/shadow from nav link hover for cleaner look */
+    /* transform: translateY(-3px); */
+    /* box-shadow: 0 0 15px 3px var(--color-glow-effect-default);  */
+>>>>>>> Stashed changes
 }
 
 .main-nav a::after {
     content: '';
     position: absolute;
+<<<<<<< Updated upstream
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
     background: var(--color-accent-primary);
+=======
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-accent-primary);
+>>>>>>> Stashed changes
     transition: width var(--transition-speed) ease;
 }
 
@@ -331,12 +501,20 @@ section {
 
 /* Hero Section */
 .hero-section {
+<<<<<<< Updated upstream
     min-height: 100vh;
+=======
+    min-height: 80vh; /* Adjust height slightly */
+>>>>>>> Stashed changes
     display: flex;
     align-items: center;
     text-align: center;
     padding: var(--space-xl) 0;
+<<<<<<< Updated upstream
     margin-top: 4rem;
+=======
+    margin-top: 0; /* Remove margin-top now that header is sticky */
+>>>>>>> Stashed changes
     overflow: hidden;
     position: relative;
 }
@@ -390,6 +568,7 @@ section {
 /* Buttons */
 .btn {
     display: inline-block;
+<<<<<<< Updated upstream
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: var(--font-weight-medium);
@@ -432,6 +611,34 @@ section {
     box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
     transform: translateY(-2px);
     color: white;
+=======
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius-md); /* Use softer radius */
+    font-weight: var(--font-weight-medium);
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease, background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px 4px var(--color-glow-effect-default); /* Slightly stronger default glow */
+}
+
+.btn-primary {
+    background: transparent;
+    color: var(--color-text-primary); /* Make secondary buttons stand out more */
+    border: 1px solid var(--color-border-subtle);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #a3c6ff, #5c91f7);
+    color: var(--color-bg-primary);
+>>>>>>> Stashed changes
 }
 
 .btn-secondary {
@@ -441,9 +648,28 @@ section {
 }
 
 .btn-secondary:hover {
+<<<<<<< Updated upstream
     background: rgba(138, 180, 248, 0.1);
     box-shadow: 0 5px 15px rgba(138, 180, 248, 0.1);
     transform: translateY(-2px);
+=======
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-tertiary);
+    /* Keep glow, remove specific styling from before */
+    /* font-size: 1.1rem; */
+    /* background: linear-gradient(90deg, #ff9d6c, #ff6b6b); */
+    /* color: white; */
+    /* padding: var(--space-sm) var(--space-md); */
+    /* border-radius: var(--border-radius-sm); */
+    /* margin-top: var(--space-lg); */
+    /* font-weight: var(--font-weight-bold); */
+    /* display: block; */
+    /* max-width: 400px; */
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+    /* box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4); */
+    /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+>>>>>>> Stashed changes
 }
 
 .btn-tertiary {
@@ -453,8 +679,13 @@ section {
 }
 
 .btn-tertiary:hover {
+<<<<<<< Updated upstream
     background: rgba(255, 255, 255, 0.12);
     transform: translateY(-2px);
+=======
+    background: rgba(138, 180, 248, 0.15);
+    color: var(--color-accent-primary);
+>>>>>>> Stashed changes
 }
 
 /* Content Sections */
@@ -477,11 +708,19 @@ section {
     background: var(--color-bg-tertiary);
     border-radius: var(--border-radius-lg);
     padding: var(--space-lg);
+<<<<<<< Updated upstream
     box-shadow: 0 10px 30px var(--color-card-shadow);
     transition: all var(--transition-speed) ease;
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.03);
+=======
+    box-shadow: 0 8px 25px var(--color-card-shadow);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border-subtle);
+>>>>>>> Stashed changes
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -501,8 +740,16 @@ section {
 }
 
 .app-card:hover {
+<<<<<<< Updated upstream
     transform: translateY(-10px);
     box-shadow: 0 15px 35px var(--color-card-shadow);
+=======
+    transform: translateY(-8px);
+    /* Use default glow, will be overridden by specific ID rules */
+    box-shadow:
+        0 0 20px 5px var(--color-glow-effect-default), 
+        0 12px 30px var(--color-card-shadow); 
+>>>>>>> Stashed changes
 }
 
 .app-card:hover::before {
@@ -514,17 +761,26 @@ section {
     height: 60px;
     margin: 0 auto var(--space-md);
     filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+<<<<<<< Updated upstream
     transition: transform 0.5s ease;
 }
 
 .app-card:hover .app-icon {
     transform: scale(1.1) rotate(5deg);
+=======
+    transition: transform var(--transition-speed) ease;
+>>>>>>> Stashed changes
 }
 
 .app-card h3 {
     color: var(--color-text-primary);
     font-size: 1.3rem;
     margin-bottom: var(--space-sm);
+<<<<<<< Updated upstream
+=======
+    font-weight: var(--font-weight-bold);
+    font-family: var(--font-family-heading);
+>>>>>>> Stashed changes
 }
 
 .app-card p {
@@ -546,6 +802,7 @@ section {
 
 .discount-note {
     text-align: center;
+<<<<<<< Updated upstream
     font-size: 1.1rem;
     background: linear-gradient(90deg, #ff9d6c, #ff6b6b);
     -webkit-background-clip: text;
@@ -553,12 +810,46 @@ section {
     color: transparent;
     margin-top: var(--space-lg);
     font-weight: var(--font-weight-bold);
+=======
+    font-size: 1.25rem; /* Slightly larger */
+    /* Revert gradient text, style as a block */
+    /* background: linear-gradient(90deg, #ff9d6c, #ff6b6b); */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+    /* color: transparent; */
+    background-color: rgba(255, 107, 107, 0.1); /* Light red background */
+    color: #ff8a8a; /* Reddish text */
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--border-radius-md);
+    margin: var(--space-xl) auto 0; /* More margin top */
+    font-weight: var(--font-weight-medium);
+    max-width: 500px;
+    display: block;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.discount-note:hover {
+    transform: scale(1.03) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.2);
+}
+
+.discount-note strong {
+    font-weight: var(--font-weight-bold); /* Ensure strong is bold */
+    border-radius: var(--border-radius-lg); /* Use softer radius */
+    overflow: hidden;
+    box-shadow: 0 15px 35px var(--color-card-shadow);
+    border: 1px solid var(--color-border-subtle); 
+>>>>>>> Stashed changes
 }
 
 /* Demo Section */
 .demo-section {
     position: relative;
     padding: var(--space-xl) 0;
+<<<<<<< Updated upstream
 }
 
 .video-wrapper {
@@ -574,6 +865,63 @@ section {
 .video-wrapper:hover {
     transform: scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+=======
+    margin: var(--space-xl) 0;
+}
+
+.demo-section h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: var(--space-xl);
+    color: var(--color-accent-primary);
+    text-shadow: 0 0 10px rgba(138, 180, 248, 0.3);
+    animation: floatIn 0.8s ease-out backwards;
+}
+
+.demo-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--color-accent-gradient);
+}
+
+.demo-section .container {
+    position: relative;
+}
+
+/* Add the blue outline effect similar to the screenshot */
+.demo-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1300px;
+    height: 100%;
+    border: 1px solid rgba(138, 180, 248, 0.2);
+    border-radius: var(--border-radius-xl);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.video-wrapper {
+    max-width: 900px;
+    margin: 0 auto var(--space-lg);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 15px 35px var(--color-card-shadow);
+    border: 1px solid var(--color-border-subtle);
+    transition: box-shadow var(--transition-speed) ease;
+}
+
+/* Clean up the hover states for clarity */
+.app-card:hover, .featured-blog-post:hover, .faq-item:hover, .newsletter-promo:hover {
+    transform: translateY(-5px);
+>>>>>>> Stashed changes
 }
 
 /* Blog Section */
@@ -583,11 +931,22 @@ section {
     border-radius: var(--border-radius-lg);
     margin: var(--space-lg) 0;
     padding: var(--space-xl) var(--space-md);
+<<<<<<< Updated upstream
+=======
+    width: 100%;
+}
+
+.blog-section .container {
+    max-width: 100%;
+    width: 100%;
+    padding: 0;
+>>>>>>> Stashed changes
 }
 
 .featured-blog-post {
     background: var(--color-bg-tertiary);
     padding: var(--space-lg);
+<<<<<<< Updated upstream
     border-radius: var(--border-radius-lg);
     margin-bottom: var(--space-lg);
     border: 1px solid rgba(255, 255, 255, 0.03);
@@ -597,6 +956,19 @@ section {
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
+=======
+    border-radius: var(--border-radius-lg); /* Use softer radius */
+    margin-bottom: var(--space-lg);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border-subtle);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    max-width: 100%; /* Removed the 700px constraint */
+    width: 100%;
+    margin: 0 0 var(--space-lg); /* Removed the auto margins */
+    animation: floatInLeft 0.8s ease-out backwards;
+    animation-delay: 0.2s;
+>>>>>>> Stashed changes
 }
 
 .featured-blog-post::before {
@@ -605,19 +977,36 @@ section {
     top: 0;
     left: 0;
     width: 100%;
+<<<<<<< Updated upstream
     height: 100%;
     background: linear-gradient(45deg, rgba(66, 133, 244, 0.03), rgba(138, 180, 248, 0.03));
     opacity: 0;
     transition: opacity var(--transition-speed) ease;
+=======
+    height: 4px;
+    background: var(--color-accent-gradient);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition-speed) ease;
+>>>>>>> Stashed changes
 }
 
 .featured-blog-post:hover {
     transform: translateY(-5px);
+<<<<<<< Updated upstream
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .featured-blog-post:hover::before {
     opacity: 1;
+=======
+    /* Use default glow */
+    box-shadow: 0 0 18px 4px var(--color-glow-effect-default);
+}
+
+.featured-blog-post:hover::before {
+    transform: scaleX(1);
+>>>>>>> Stashed changes
 }
 
 .featured-blog-post h3 {
@@ -636,9 +1025,16 @@ section {
     background: var(--color-bg-tertiary);
     padding: var(--space-lg);
     border-radius: var(--border-radius-lg);
+<<<<<<< Updated upstream
     max-width: 600px;
     margin: var(--space-lg) auto 0;
     border: 1px solid rgba(255, 255, 255, 0.03);
+=======
+    max-width: 100%; /* Removed the 600px constraint */
+    width: 100%;
+    margin: var(--space-lg) 0 0; /* Removed the auto margins */
+    border: 1px solid var(--color-border-subtle);
+>>>>>>> Stashed changes
 }
 
 .newsletter-promo h4 {
@@ -646,7 +1042,11 @@ section {
     margin-bottom: var(--space-sm);
 }
 
+<<<<<<< Updated upstream
 /* FAQ Section */
+=======
+/* Updated FAQ Section - Similar to the GIF */
+>>>>>>> Stashed changes
 .faq-section {
     background-color: var(--color-bg-secondary);
     position: relative;
@@ -656,6 +1056,7 @@ section {
     overflow: hidden;
 }
 
+<<<<<<< Updated upstream
 .faq-container {
     max-width: 800px;
     margin: 0 auto;
@@ -666,21 +1067,52 @@ section {
     border-radius: var(--border-radius-md);
     margin-bottom: var(--space-md);
     border: 1px solid rgba(255, 255, 255, 0.03);
+=======
+.faq-section h2 {
+    color: var(--color-faq-highlight);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    font-size: 2.5rem;
+    letter-spacing: 0.05em;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.faq-item {
+    background-color: var(--color-bg-primary); /* Darker background */
+    margin-bottom: var(--space-sm);
+    border-radius: var(--border-radius-sm);
+    border: none;
+>>>>>>> Stashed changes
     overflow: hidden;
     transition: all var(--transition-speed) ease;
 }
 
 .faq-item:hover {
+<<<<<<< Updated upstream
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .faq-question {
     padding: var(--space-md);
+=======
+    background-color: var(--color-bg-primary);
+    transform: translateX(5px); /* Slight shift right on hover */
+}
+
+.faq-question {
+    padding: var(--space-md) var(--space-lg);
+>>>>>>> Stashed changes
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
+<<<<<<< Updated upstream
 }
 
 .faq-question h3 {
@@ -693,10 +1125,29 @@ section {
 .faq-icon {
     width: 20px;
     height: 20px;
+=======
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-speed) ease;
+}
+
+.faq-question h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    color: var(--color-text-primary);
+    transition: color var(--transition-speed) ease;
+    font-weight: var(--font-weight-medium);
+    max-width: 90%; /* Ensure text doesn't crowd the arrow */
+}
+
+.faq-icon {
+    width: 16px;
+    height: 16px;
+>>>>>>> Stashed changes
     position: relative;
     transition: transform 0.3s ease;
 }
 
+<<<<<<< Updated upstream
 .faq-icon::before,
 .faq-icon::after {
     content: '';
@@ -717,11 +1168,30 @@ section {
     height: 2px;
     left: 0;
     top: 9px;
+=======
+/* Replace plus/minus with chevron arrow */
+.faq-icon::before {
+    display: none; /* Hide the vertical bar */
+}
+
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--color-text-secondary);
+    border-bottom: 2px solid var(--color-text-secondary);
+    transform: rotate(45deg); /* Point down by default */
+    top: 0;
+    left: 3px;
+    transition: transform 0.3s ease;
+>>>>>>> Stashed changes
 }
 
 .faq-answer {
     max-height: 0;
     overflow: hidden;
+<<<<<<< Updated upstream
     transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
@@ -913,6 +1383,387 @@ section {
 }
 
 /* Back to Top Button */
+=======
+    transition: max-height 0.4s ease-in-out, padding 0.2s ease;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    padding: 0 var(--space-lg);
+}
+
+.faq-answer p {
+    margin-bottom: var(--space-md);
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.faq-item.active {
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item.active .faq-question {
+    border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 1000px;
+    padding: var(--space-md) var(--space-lg) var(--space-lg);
+}
+
+.faq-item.active .faq-answer p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq-item.active .faq-icon::after {
+    transform: rotate(225deg); /* Point up when active */
+    top: 5px; /* Adjust position for rotation */
+}
+
+/* Improved Responsiveness */
+@media (max-width: 992px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 92%;
+        padding: 0 10px;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .site-header .container {
+        flex-direction: column;
+        gap: var(--space-sm);
+        padding: var(--space-sm) 0;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-sm);
+        width: 100%;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-section {
+        min-height: unset;
+        padding-top: calc(var(--space-xl));
+        padding-bottom: var(--space-lg);
+    }
+
+    .apps-grid, 
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-col {
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .faq-question {
+        padding: var(--space-md) var(--space-sm);
+    }
+    
+    .faq-answer {
+        padding: 0 var(--space-sm);
+    }
+    
+    .faq-item.active .faq-answer {
+        padding: var(--space-md) var(--space-sm) var(--space-md);
+    }
+    
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .container {
+        width: 95%;
+    }
+    
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    .discount-note {
+        font-size: 1.1rem;
+        padding: var(--space-sm);
+    }
+}
+
+/* Footer */
+.site-footer {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-secondary);
+    padding: var(--space-xl) 0;
+    position: relative;
+    margin-top: var(--space-xl);
+    border-top: 1px solid var(--color-border-subtle);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-lg);
+    align-items: flex-start;
+}
+
+.footer-col h4 {
+    color: var(--color-text-primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: inline-block;
+    font-family: var(--font-family-heading);
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: var(--color-accent-primary);
+}
+
+.footer-col p {
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+    font-size: 0.95rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: var(--space-xs);
+}
+
+.footer-col a {
+    color: var(--color-text-secondary);
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    display: inline-block;
+    padding: 3px 0;
+    font-size: 0.95rem;
+}
+
+.footer-col a:hover {
+    color: var(--color-accent-primary);
+    transform: translateX(3px);
+}
+
+/* Social Links / Connect Section */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    padding: var(--space-sm);
+    background-color: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border-radius: var(--border-radius-sm);
+    text-decoration: none;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid var(--color-border-subtle);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(66, 133, 244, 0.1), rgba(138, 180, 248, 0.1));
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-accent-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent-primary);
+}
+
+.social-links a:hover::before {
+    transform: translateX(0);
+}
+
+.social-link.youtube {
+    position: relative;
+    padding-left: 40px;
+}
+
+.social-link.youtube::after {
+    content: "";
+    position: absolute;
+    left: var(--space-sm);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff0000'%3E%3Cpath d='M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-border-subtle);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-md);
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Fix for duplicate styles */
+.featured-blog-post:nth-of-type(2) {
+    display: none;
+}
+
+/* Fix duplicate FAQ entries in CSS */
+.faq-item:nth-of-type(2) {
+    display: none;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: var(--space-xl);
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .footer-col a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .social-links {
+        align-items: center;
+    }
+    
+    .social-links a {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+}
+
+/* Add/modify blue outline styling for content boxes */
+.video-wrapper, .featured-blog-post, .app-card, .faq-item, .newsletter-promo {
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px rgba(138, 180, 248, 0.1); 
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+.video-wrapper::before, .featured-blog-post::before, .app-card::before, .faq-item::before, .newsletter-promo::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, #4285f4, #8ab4f8, #4285f4);
+    z-index: -1;
+    border-radius: calc(var(--border-radius-lg) + 2px);
+    opacity: 0.1;
+    transition: opacity 0.3s ease;
+}
+
+.video-wrapper:hover::before, .featured-blog-post:hover::before, .app-card:hover::before, .faq-item:hover::before, .newsletter-promo:hover::before {
+    opacity: 0.3;
+}
+
+/* Add blue glow to demo section */
+.demo-section .video-wrapper {
+    border: 2px solid #4285f4;
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.3);
+    position: relative;
+}
+
+.demo-section .video-wrapper::before {
+    opacity: 0.2;
+}
+
+.demo-section .video-wrapper:hover::before {
+    opacity: 0.5;
+}
+
+/* Fix specific app glow colors for app cards */
+#app-personal:hover {
+    box-shadow: 0 0 25px 7px var(--color-glow-app-personal), 0 12px 30px var(--color-card-shadow);
+}
+
+#app-office:hover {
+    box-shadow: 0 0 25px 7px var(--color-glow-app-office), 0 12px 30px var(--color-card-shadow);
+}
+
+#app-media:hover {
+    box-shadow: 0 0 25px 7px var(--color-glow-app-media), 0 12px 30px var(--color-card-shadow);
+}
+
+/* Add back to top button styling */
+>>>>>>> Stashed changes
 .back-to-top {
     position: fixed;
     bottom: 30px;
@@ -946,6 +1797,7 @@ section {
 
 .back-to-top:hover {
     transform: translateY(-5px);
+<<<<<<< Updated upstream
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -1204,11 +2056,78 @@ Animated Text Effect
 
 @keyframes revealChar {
     to {
+=======
+    box-shadow: 0 0 15px 3px var(--color-glow-effect-default);
+}
+
+/* Add scroll progress bar styling */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: var(--color-accent-gradient);
+    width: 0%;
+    z-index: 1001;
+    transition: width 0.1s linear;
+}
+
+/* Self-hosted Video Styling */
+.demo-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-speed) ease;
+}
+
+/* Make sure demo video maintains aspect ratio on all screens */
+.video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Add better controls appearance */
+video::-webkit-media-controls {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+/* Make sure the demo section's blue outline still works properly */
+.demo-section .video-wrapper {
+    border: 2px solid #4285f4;
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.3);
+    position: relative;
+    padding-top: 56.25%; /* Maintain 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+/* Animation Keyframes */
+@keyframes floatIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+>>>>>>> Stashed changes
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+<<<<<<< Updated upstream
 /*
 ==============================
 Logo Animation
@@ -1238,10 +2157,33 @@ Logo Animation
     filter: blur(15px);
     opacity: 0.5;
     animation: pulse 3s infinite ease-in-out;
+=======
+@keyframes floatInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+>>>>>>> Stashed changes
 }
 
 @keyframes pulse {
     0% {
+<<<<<<< Updated upstream
         transform: translateY(-50%) scale(1);
         opacity: 0.5;
     }
@@ -1291,4 +2233,139 @@ Logo Animation
 
 .youtube:hover::before {
     transform: translateX(100%);
+=======
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+/* Floating animation for blue glow effects */
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+        transform: translateY(0px);
+    }
+    50% {
+        box-shadow: 0 15px 30px rgba(66, 133, 244, 0.4);
+        transform: translateY(-10px);
+    }
+    100% {
+        box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+        transform: translateY(0px);
+    }
+}
+
+/* Apply animations to elements */
+.app-card {
+    animation: floatIn 0.8s ease-out backwards;
+}
+
+.app-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.app-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.app-card:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.featured-blog-post {
+    animation: floatInLeft 0.8s ease-out backwards;
+    animation-delay: 0.2s;
+}
+
+.newsletter-promo {
+    animation: floatInRight 0.8s ease-out backwards;
+    animation-delay: 0.4s;
+}
+
+.faq-item {
+    animation: floatIn 0.6s ease-out backwards;
+}
+
+.faq-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.faq-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.faq-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.faq-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.faq-item:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.social-links a {
+    animation: floatInRight 0.6s ease-out backwards;
+    animation-delay: 0.3s;
+}
+
+.discount-note {
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.demo-section h2, .blog-section h2, .apps-section h2, .faq-section h2 {
+    animation: floatIn 0.8s ease-out backwards;
+}
+
+/* Add floating animation to demo video */
+.demo-section .video-wrapper {
+    animation: float 6s infinite ease-in-out;
+}
+
+/* Add shimmer effect to section headings */
+.faq-section h2 {
+    background: linear-gradient(90deg, 
+        var(--color-faq-highlight) 0%, 
+        #ffffff 20%, 
+        var(--color-faq-highlight) 40%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+}
+
+/* Optimize animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .app-card, .featured-blog-post, .newsletter-promo, .faq-item, 
+    .social-links a, .hero-content, .discount-note, h2, .video-wrapper {
+        animation: none !important;
+    }
+>>>>>>> Stashed changes
 }
