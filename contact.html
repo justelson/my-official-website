@@ -51,13 +51,11 @@
                     <div class="content-card">
                         <div class="form-wrapper">
                             <h2 class="section-title">Send a Message</h2>
-                            <form action="https://formsubmit.co/elsonyt25@gmail.com" method="POST" class="contact-form">
+                            <form id="contactForm" action="https://formsubmit.co/ajax/elsonyt25@gmail.com" method="POST" class="contact-form">
                                 <!-- Honeypot -->
                                 <input type="text" name="_honey" style="display: none;">
                                 <!-- Disable Captcha -->
                                 <input type="hidden" name="_captcha" value="false">
-                                <!-- Success Page -->
-                                <input type="hidden" name="_next" value="https://justelson.com/contact.html">
                                 
                                 <div class="form-group">
                                     <label for="name">Name</label>
@@ -80,6 +78,7 @@
                                     <textarea id="message" name="message" class="form-input dark-input" rows="4" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-gradient">Send Message</button>
+                                <div id="formStatus" class="form-status"></div>
                             </form>
                         </div>
                     </div>
