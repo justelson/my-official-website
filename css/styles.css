@@ -1763,3 +1763,30 @@ select.form-input {
 .contact-form {
     margin-top: 0.75rem;
 }
+
+/* Form Status Messages */
+.form-status {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-status.success {
+    background: rgba(54, 179, 126, 0.1);
+    color: #36B37E;
+    border: 1px solid rgba(54, 179, 126, 0.2);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.form-status.error {
+    background: rgba(255, 86, 48, 0.1);
+    color: #FF5630;
+    border: 1px solid rgba(255, 86, 48, 0.2);
+    opacity: 1;
+    transform: translateY(0);
+}
