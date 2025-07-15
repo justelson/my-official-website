@@ -1,228 +1,189 @@
-// DOM Elements
-const header = document.querySelector('.site-header');
-const scrollProgress = document.querySelector('.scroll-progress');
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mainNav = document.querySelector('.main-nav');
-const faqItems = document.querySelectorAll('.faq-item');
+document.addEventListener('DOMContentLoaded', () => {
 
-// Scroll Progress and Header Animation
-function handleScroll() {
-    const scrollPosition = window.scrollY;
-    const totalHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercentage = (scrollPosition / totalHeight) * 100;
+    // --- DOM Elements ---
+    const header = document.querySelector('.site-header');
+    const scrollProgress = document.querySelector('.scroll-progress');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    const pageElements = document.querySelectorAll('.page-transition');
+    const scrambleElements = document.querySelectorAll('[data-scramble-text]');
+    const contactForm = document.getElementById('contactForm');
 
-    scrollProgress.style.width = `${scrollPercentage}%`;
+    // --- Text Scramble Effect ---
+    class TextScrambler {
+        constructor(el) {
+            this.el = el;
+            this.chars = '!<>-_\\/[]{}—=+*^?#________';
+            this.update = this.update.bind(this);
+        }
 
-    if (scrollPosition > 100) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
+        setText(newText) {
+            const oldText = this.el.innerText;
+            const length = Math.max(oldText.length, newText.length);
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+                const from = oldText[i] || '';
+                const to = newText[i] || '';
+                const start = Math.floor(Math.random() * 40);
+                const end = start + Math.floor(Math.random() * 40);
+                this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameRequest);
+            this.frame = 0;
+            this.update();
+        }
+
+        update() {
+            let output = '';
+            let complete = 0;
+            for (let i = 0, n = this.queue.length; i < n; i++) {
+                let { from, to, start, end, char } = this.queue[i];
+                if (this.frame >= end) {
+                    complete++;
+                    output += to;
+                } else if (this.frame >= start) {
+                    if (!char || Math.random() < 0.28) {
+                        char = this.randomChar();
+                        this.queue[i].char = char;
+                    }
+                    output += `<span class="scramble-char">${char}</span>`;
+                } else {
+                    output += from;
+                }
+            }
+            this.el.innerHTML = output;
+            if (complete === this.queue.length) {
+                // Done
+            } else {
+                this.frameRequest = requestAnimationFrame(this.update);
+                this.frame++;
+            }
+        }
+        randomChar() {
+            return this.chars[Math.floor(Math.random() * this.chars.length)];
+        }
     }
-}
 
-// Mobile Menu Toggle
-function toggleMobileMenu() {
-    mainNav.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-    document.body.classList.toggle('menu-open');
-    
-    // Toggle aria-expanded
-    const isExpanded = mainNav.classList.contains('active');
-    mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
-    
-    // Prevent body scrolling when menu is open
-    if (isExpanded) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
-}
+    // --- Event Handlers ---
+    const handleScroll = () => {
+        const scrollPosition = window.scrollY;
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercentage = totalHeight > 0 ? (scrollPosition / totalHeight) * 100 : 0;
 
-// Enhanced FAQ Functionality with Accessibility
-function initFAQ() {
-    faqItems.forEach((item, index) => {
-        const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const toggle = item.querySelector('.faq-toggle');
-        
-        // Set up ARIA attributes
-        question.setAttribute('id', `faq-question-${index}`);
-        answer.setAttribute('id', `faq-answer-${index}`);
-        question.setAttribute('aria-controls', `faq-answer-${index}`);
-        question.setAttribute('aria-expanded', 'false');
-        
-        question.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
-            
-            // Close all other FAQs
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                    otherItem.querySelector('.faq-toggle').textContent = '+';
-                    otherItem.querySelector('.faq-answer').style.maxHeight = '0';
-                    otherItem.querySelector('.faq-answer').style.opacity = '0';
+        if (scrollProgress) {
+            scrollProgress.style.width = `${scrollPercentage}%`;
+        }
+
+        if (header) {
+            header.classList.toggle('scrolled', scrollPosition > 50);
+        }
+    };
+
+    const toggleMobileMenu = () => {
+        if (mainNav && mobileMenuBtn) {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+            const isExpanded = mainNav.classList.contains('active');
+            mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+        }
+    };
+    
+    // --- Intersection Observers ---
+    const createPageTransitionObserver = () => {
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    obs.unobserve(entry.target);
                 }
             });
-            
-            // Toggle current FAQ
-            item.classList.toggle('active');
-            question.setAttribute('aria-expanded', !isActive);
-            
-            // Update toggle symbol
-            if (toggle) {
-                toggle.textContent = isActive ? '+' : '−';
-            }
+        }, { threshold: 0.1 });
 
-            // Animate answer height and opacity
-            if (!isActive) {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-                answer.style.opacity = '1';
+        pageElements.forEach(element => observer.observe(element));
+    };
+    
+    const createScrambleObserver = () => {
+        const scramblers = Array.from(scrambleElements).map(el => ({ el, fx: new TextScrambler(el) }));
+        
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const scrambler = scramblers.find(s => s.el === entry.target);
+                    if (scrambler) {
+                        const targetText = entry.target.getAttribute('data-scramble-text');
+                        scrambler.fx.setText(targetText);
+                    }
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        scrambleElements.forEach(element => observer.observe(element));
+    };
+
+
+    // --- Contact Form ---
+    const handleContactForm = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const statusDiv = document.getElementById('formStatus');
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        statusDiv.style.display = 'none';
+
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                statusDiv.textContent = 'Message sent successfully!';
+                statusDiv.className = 'success';
+                form.reset();
             } else {
-                answer.style.maxHeight = '0';
-                answer.style.opacity = '0';
+                throw new Error('Server responded with an error.');
             }
-        });
+        } catch (error) {
+            statusDiv.textContent = 'Failed to send message. Please try again later.';
+            statusDiv.className = 'error';
+        } finally {
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+            statusDiv.style.display = 'block';
+        }
+    };
 
-        // Enable keyboard navigation
-        question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                question.click();
-            }
-        });
-    });
-}
 
-// Smooth Scroll Implementation
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = anchor.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                mainNav.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-                document.body.classList.remove('menu-open');
-                document.body.style.overflow = '';
-                
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-
-                // Update URL without jumping
-                history.pushState(null, null, targetId);
-            }
-        });
-    });
-}
-
-// Page Transition Effects
-function initPageTransitions() {
-    const pageElements = document.querySelectorAll('.page-transition');
+    // --- Initialization ---
+    handleScroll(); // Initial call
+    createPageTransitionObserver();
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '50px'
-    });
+    if (scrambleElements.length > 0) {
+        createScrambleObserver();
+    }
     
-    pageElements.forEach(element => {
-        observer.observe(element);
-    });
-}
-
-// Initialize all functionality
-document.addEventListener('DOMContentLoaded', () => {
-    initFAQ();
-    initSmoothScroll();
-    initPageTransitions();
-    
-    // Set up event listeners
     window.addEventListener('scroll', handleScroll);
-    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
     
-    // Handle escape key for accessibility
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && mainNav.classList.contains('active')) {
+        if (e.key === 'Escape' && mainNav && mainNav.classList.contains('active')) {
             toggleMobileMenu();
         }
     });
-    
-    // Initialize scroll progress on page load
-    handleScroll();
-});
-
-// Handle prefers-reduced-motion
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-function updateMotionPreference() {
-    const root = document.documentElement;
-    if (prefersReducedMotion.matches) {
-        root.style.setProperty('--transition', 'none');
-        document.body.classList.add('reduce-motion');
-    } else {
-        root.style.setProperty('--transition', 'all 0.3s ease');
-        document.body.classList.remove('reduce-motion');
-    }
-}
-
-prefersReducedMotion.addEventListener('change', updateMotionPreference);
-updateMotionPreference();
-
-// Contact Form Submission
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            // Show loading state
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-
-            const formData = new FormData(contactForm);
-            
-            try {
-                const response = await fetch('https://formsubmit.co/ajax/elsonyt25@gmail.com', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Accept': 'application/json'
-                    },
-                    body: JSON.stringify(Object.fromEntries(formData))
-                });
-
-                if (response.ok) {
-                    formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
-                    formStatus.className = 'form-status success';
-                    contactForm.reset();
-                } else {
-                    throw new Error('Failed to send message');
-                }
-            } catch (error) {
-                formStatus.textContent = 'Failed to send message. Please try again.';
-                formStatus.className = 'form-status error';
-            } finally {
-                submitButton.textContent = originalButtonText;
-                submitButton.disabled = false;
-            }
-        });
+        contactForm.addEventListener('submit', handleContactForm);
     }
 });

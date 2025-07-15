@@ -18,7 +18,7 @@
             <div class="logo">
                 <a href="index.html" class="logo-text">Just Elson</a>
             </div>
-            <div class="mobile-menu-btn">
+            <div class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -37,53 +37,45 @@
         <section class="hero-section page-transition">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="title">Just Elson</h1>
-                    <p class="subtitle">Let's discuss how we can help enhance your productivity</p>
+                    <h1 class="title">Get In Touch</h1>
+                    <p class="subtitle">Let's discuss how we can help enhance your productivity.</p>
                 </div>
             </div>
         </section>
 
         <section class="contact-section page-transition">
             <div class="container">
-                <div class="contact-grid">
-                    <!-- Contact Form -->
-                    <div class="content-card" style="width:100%;max-width:100vw;grid-column:1/-1;">
-                        <div class="form-wrapper">
-                            <h2 class="section-title">Send a Message</h2>
-                            <form id="contactForm" action="https://formsubmit.co/ajax/elsonyt25@gmail.com" method="POST" class="contact-form">
-                                <!-- Honeypot -->
-                                <input type="text" name="_honey" style="display: none;">
-                                <!-- Disable Captcha -->
-                                <input type="hidden" name="_captcha" value="false">
-                                
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" id="name" name="name" class="form-input dark-input" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" class="form-input dark-input" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="subject">Subject</label>
-                                    <select id="subject" name="subject" class="form-input dark-input dark-select" required>
-                                        <option value="General Inquiry">General Inquiry</option>
-                                        <option value="Technical Support">Technical Support</option>
-                                        <option value="Refund Request">Refund Request</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message">Message</label>
-                                    <textarea id="message" name="message" class="form-input dark-input" rows="4" required></textarea>
-                                </div>
-                                <button type="submit" class="btn btn-gradient">Send Message</button>
-                                <div id="formStatus" class="form-status"></div>
-                            </form>
-                        </div>
-                    </div>
+                 <div class="content-card contact-card">
+                    <h2 class="section-title">Send a Message</h2>
+                    <form id="contactForm" class="contact-form" action="https://formsubmit.co/ajax/elsonyt25@gmail.com" method="POST">
+                        <!-- Honeypot -->
+                        <input type="text" name="_honey" style="display: none;">
+                        <!-- Disable Captcha -->
+                        <input type="hidden" name="_captcha" value="false">
 
-                    <!-- Contact Info -->
-                   
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" class="form-input" required>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Technical Support">Technical Support</option>
+                                <option value="Partnership">Partnership</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-input" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div id="formStatus"></div>
+                    </form>
                 </div>
             </div>
         </section>
