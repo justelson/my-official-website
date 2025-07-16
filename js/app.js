@@ -1,96 +1,133 @@
+/**
+ * app.js
+ * 
+ * Author: Gemini
+ * Description: Main JavaScript for the Just Elson website.
+ * Features:
+ * - Mobile menu toggle
+ * - Header styling on scroll
+ * - Scroll progress bar
+ * - Page element fade-in transitions
+ * - Asynchronous contact form submission
+ */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- DOM Elements ---
+    // --- DOM Element Selection ---
     const header = document.querySelector('.site-header');
     const scrollProgress = document.querySelector('.scroll-progress');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
     const pageElements = document.querySelectorAll('.page-transition');
-    const scrambleElements = document.querySelectorAll('[data-scramble-text]');
     const contactForm = document.getElementById('contactForm');
 
-    // --- Text Scramble Effect ---
-    class TextScrambler {
-        constructor(el) {
-            this.el = el;
-            this.chars = '!<>-_\\/[]{}—=+*^?#________';
-            this.update = this.update.bind(this);
-        }
+    
+    // --- Utility Functions ---
 
-        setText(newText) {
-            const oldText = this.el.innerText;
-            const length = Math.max(oldText.length, newText.length);
-            this.queue = [];
-            for (let i = 0; i < length; i++) {
-                const from = oldText[i] || '';
-                const to = newText[i] || '';
-                const start = Math.floor(Math.random() * 40);
-                const end = start + Math.floor(Math.random() * 40);
-                this.queue.push({ from, to, start, end });
+    /**
+     * Throttles a function to limit its execution rate.
+     * @param {Function} func - The function to throttle.
+     * @param {number} limit - The throttle duration in milliseconds.
+     * @returns {Function} - The throttled function.
+     */
+    const throttle = (func, limit) => {
+        let inThrottle;
+        return function() {
+            const args = arguments;
+            const context = this;
+            if (!inThrottle) {
+                func.apply(context, args);
+                inThrottle = true;
+                setTimeout(() => inThrottle = false, limit);
             }
-            cancelAnimationFrame(this.frameRequest);
-            this.frame = 0;
-            this.update();
-        }
+        };
+    };
 
-        update() {
-            let output = '';
-            let complete = 0;
-            for (let i = 0, n = this.queue.length; i < n; i++) {
-                let { from, to, start, end, char } = this.queue[i];
-                if (this.frame >= end) {
-                    complete++;
-                    output += to;
-                } else if (this.frame >= start) {
-                    if (!char || Math.random() < 0.28) {
-                        char = this.randomChar();
-                        this.queue[i].char = char;
-                    }
-                    output += `<span class="scramble-char">${char}</span>`;
-                } else {
-                    output += from;
-                }
-            }
-            this.el.innerHTML = output;
-            if (complete === this.queue.length) {
-                // Done
-            } else {
-                this.frameRequest = requestAnimationFrame(this.update);
-                this.frame++;
-            }
-        }
-        randomChar() {
-            return this.chars[Math.floor(Math.random() * this.chars.length)];
-        }
-    }
 
     // --- Event Handlers ---
+
+    /**
+     * Handles scroll-related UI updates like the progress bar and header style.
+     */
     const handleScroll = () => {
         const scrollPosition = window.scrollY;
         const totalHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercentage = totalHeight > 0 ? (scrollPosition / totalHeight) * 100 : 0;
-
-        if (scrollProgress) {
+        
+        // Update scroll progress bar
+        if (scrollProgress && totalHeight > 0) {
+            const scrollPercentage = (scrollPosition / totalHeight) * 100;
             scrollProgress.style.width = `${scrollPercentage}%`;
         }
-
+        
+        // Add scrolled class to header
         if (header) {
             header.classList.toggle('scrolled', scrollPosition > 50);
         }
     };
 
+    /**
+     * Toggles the mobile navigation menu.
+     */
     const toggleMobileMenu = () => {
         if (mainNav && mobileMenuBtn) {
-            mainNav.classList.toggle('active');
+            const isExpanded = mainNav.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
-            document.body.classList.toggle('menu-open');
-            const isExpanded = mainNav.classList.contains('active');
             mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
+            document.body.classList.toggle('menu-open', isExpanded);
         }
     };
-    
+
+    /**
+     * Handles the contact form submission asynchronously.
+     * @param {Event} e - The form submission event.
+     */
+    const handleContactForm = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const statusDiv = document.getElementById('formStatus');
+        const submitButton = form.querySelector('button[type="submit"]');
+        
+        if (!statusDiv || !submitButton) return;
+
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Sending...';
+        submitButton.disabled = true;
+        statusDiv.style.display = 'none';
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(Object.fromEntries(new FormData(form)))
+            });
+
+            if (response.ok) {
+                statusDiv.textContent = 'Message sent successfully!';
+                statusDiv.className = 'success';
+                form.reset();
+            } else {
+                const result = await response.json();
+                throw new Error(result.message || 'Server responded with an error.');
+            }
+        } catch (error) {
+            statusDiv.textContent = 'Failed to send message. Please try again later.';
+            statusDiv.className = 'error';
+            console.error('Form Submission Error:', error);
+        } finally {
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+            statusDiv.style.display = 'block';
+        }
+    };
+
+
     // --- Intersection Observers ---
+
+    /**
+     * Sets up an Intersection Observer to animate elements as they enter the viewport.
+     */
     const createPageTransitionObserver = () => {
+        if (pageElements.length === 0) return;
+        
         const observer = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -102,88 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         pageElements.forEach(element => observer.observe(element));
     };
-    
-    const createScrambleObserver = () => {
-        const scramblers = Array.from(scrambleElements).map(el => ({ el, fx: new TextScrambler(el) }));
-        
-        const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const scrambler = scramblers.find(s => s.el === entry.target);
-                    if (scrambler) {
-                        const targetText = entry.target.getAttribute('data-scramble-text');
-                        scrambler.fx.setText(targetText);
-                    }
-                    obs.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        scrambleElements.forEach(element => observer.observe(element));
-    };
 
 
-    // --- Contact Form ---
-    const handleContactForm = async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const statusDiv = document.getElementById('formStatus');
-        const submitButton = form.querySelector('button[type="submit"]');
-        const originalButtonText = submitButton.textContent;
+    // --- Initialization & Event Listeners ---
 
-        submitButton.textContent = 'Sending...';
-        submitButton.disabled = true;
-        statusDiv.style.display = 'none';
-
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData.entries());
-
-        try {
-            const response = await fetch(form.action, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify(data)
-            });
-
-            if (response.ok) {
-                statusDiv.textContent = 'Message sent successfully!';
-                statusDiv.className = 'success';
-                form.reset();
-            } else {
-                throw new Error('Server responded with an error.');
-            }
-        } catch (error) {
-            statusDiv.textContent = 'Failed to send message. Please try again later.';
-            statusDiv.className = 'error';
-        } finally {
-            submitButton.textContent = originalButtonText;
-            submitButton.disabled = false;
-            statusDiv.style.display = 'block';
-        }
-    };
-
-
-    // --- Initialization ---
-    handleScroll(); // Initial call
+    // Initial call to set states correctly on page load
+    handleScroll();
     createPageTransitionObserver();
-    
-    if (scrambleElements.length > 0) {
-        createScrambleObserver();
-    }
-    
-    window.addEventListener('scroll', handleScroll);
+
+    // Attach event listeners
+    window.addEventListener('scroll', throttle(handleScroll, 100)); // Throttled for performance
 
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
     }
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', handleContactForm);
+    }
     
+    // Close mobile menu with the Escape key for accessibility
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && mainNav && mainNav.classList.contains('active')) {
             toggleMobileMenu();
         }
     });
-
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleContactForm);
-    }
 });

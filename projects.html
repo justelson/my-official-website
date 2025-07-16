@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Elson - Simplifying Digital Life</title>
+    <title>Projects - Just Elson</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
@@ -20,8 +20,8 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -38,102 +38,83 @@
         <section class="hero-section page-transition">
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="title animate-title">Simplifying Your Digital Life</h1>
-                    <p class="subtitle animate-subtitle">Innovative solutions for modern productivity challenges. Helping you organize, optimize, and thrive in the digital age.</p>
-                    <div class="cta-buttons">
-                        <a href="projects.html" class="btn btn-primary">View Projects</a>
-                        <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
-                    </div>
+                    <h1 class="title">My Projects</h1>
+                    <p class="subtitle">A showcase of my work in productivity, web development, and design.</p>
                 </div>
             </div>
         </section>
 
-        <section class="features-section page-transition">
+        <section class="projects-section page-transition">
             <div class="container">
-                <h2 class="section-title">Why Choose Just Elson?</h2>
-                <div class="bento-grid">
-                    <div class="bento-item content-box" style="--bento-span-col: 2;">
-                        <span class="feature-icon">🎯</span>
-                        <h3>Focused Solutions</h3>
-                        <p>Each tool is crafted to solve specific productivity challenges, making your digital workflow smoother and more efficient.</p>
-                    </div>
-                    <div class="bento-item content-box">
-                        <span class="feature-icon">🛡️</span>
-                        <h3>Privacy First</h3>
-                        <p>Your data stays on your device. We believe in privacy by design, without cloud storage or data collection.</p>
-                    </div>
-                    <div class="bento-item content-box">
-                        <span class="feature-icon">💡</span>
-                        <h3>Smart Design</h3>
-                        <p>Intuitive interfaces combined with powerful features make our tools a joy to use, not a chore.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="featured-projects-section page-transition">
-            <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
                 <div class="project-grid">
-                    <!-- Project Card 1 -->
+                    <!-- Project 1: Productivity Dashboard -->
                     <div class="project-card">
-                        <div class="project-image" style="background-color: #2a3a50;">
-                            <!-- Placeholder for an image or icon -->
+                        <div class="project-image" style="background: linear-gradient(45deg, #2a3a50, #005A7C);">
+                            <!-- You can use an <img> tag here or a background-image in CSS -->
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Productivity Dashboard</h3>
-                            <p class="project-description">An all-in-one organizer to manage tasks, notes, and events efficiently.</p>
+                            <p class="project-description">An all-in-one organizer to manage tasks, notes, and events efficiently. Built with vanilla JavaScript and focused on local storage for privacy.</p>
                             <div class="project-tags">
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">CSS Grid</span>
                                 <span class="tag">HTML5</span>
+                                <span class="tag">Local Storage</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-tertiary">View Details</a>
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
                             </div>
                         </div>
                     </div>
-                    <!-- Project Card 2 -->
+                    
+                    <!-- Project 2: Finance Tracker -->
                     <div class="project-card">
-                        <div class="project-image" style="background-color: #502a3a;">
-                             <!-- Placeholder for an image or icon -->
-                        </div>
+                        <div class="project-image" style="background: linear-gradient(45deg, #502a3a, #7C005A);"></div>
                         <div class="project-content">
-                             <h3 class="project-title">Personal Finance Tracker</h3>
-                            <p class="project-description">A simple, privacy-focused app to track income and expenses on your local device.</p>
+                            <h3 class="project-title">Personal Finance Tracker</h3>
+                            <p class="project-description">A simple, privacy-focused app to track income and expenses. Visualizes data using Chart.js and works offline as a PWA.</p>
                             <div class="project-tags">
                                 <span class="tag">React</span>
                                 <span class="tag">Chart.js</span>
                                 <span class="tag">PWA</span>
                             </div>
-                             <div class="project-links">
-                                <a href="#" class="btn btn-tertiary">View Details</a>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
                             </div>
                         </div>
                     </div>
-                </div>
-                 <div class="cta-buttons">
-                    <a href="projects.html" class="btn btn-secondary">See All Projects</a>
+
+                    <!-- Project 3: Blog Platform -->
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(45deg, #2a503a, #007C5A);"></div>
+                        <div class="project-content">
+                            <h3 class="project-title">Markdown Blog Engine</h3>
+                            <p class="project-description">A lightweight, file-based blog engine that renders posts from Markdown files. No database needed. Perfect for developers who love writing.</p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">Markdown-it</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more project cards here -->
+
                 </div>
             </div>
         </section>
 
-        <section class="cta-section page-transition">
-            <div class="container">
-                <div class="content-card cta-card">
-                    <h2>Ready to Streamline Your Workflow?</h2>
-                    <p>Let's connect and discuss how my solutions can help you.</p>
-                    <div class="cta-buttons">
-                        <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <div class="footer-grid">
+             <div class="footer-grid">
                 <div class="footer-col">
                     <h4>Just Elson</h4>
                     <p>Productivity solutions for a streamlined digital life.</p>
