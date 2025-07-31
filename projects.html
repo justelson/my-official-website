@@ -39,7 +39,23 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="title">My Projects</h1>
-                    <p class="subtitle">A showcase of my work in productivity, web development, and design.</p>
+                    <p class="subtitle">A showcase of my work in productivity, web development, and design solutions that simplify digital life.</p>
+                    
+                    <!-- Professional Stats -->
+                    <div class="project-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">4+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Open Source</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -47,64 +63,109 @@
         <section class="projects-section page-transition">
             <div class="container">
                 <div class="project-grid">
-                    <!-- Project 1: Productivity Dashboard -->
+                    <!-- Project 1: Unified File Organizer -->
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(45deg, #2a3a50, #005A7C);">
-                            <!-- You can use an <img> tag here or a background-image in CSS -->
+                        <div class="project-image">
+                            <img src="img/image.png" alt="Unified File Organizer Interface Preview" class="project-preview-img">
+                            <div class="project-overlay">
+                                <div class="project-demo-badge">
+                                    <span>🗂️ Desktop Application</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Productivity Dashboard</h3>
-                            <p class="project-description">An all-in-one organizer to manage tasks, notes, and events efficiently. Built with vanilla JavaScript and focused on local storage for privacy.</p>
+                            <h3 class="project-title">Unified File Organizer</h3>
+                            <p class="project-description">A powerful, all-in-one file organization solution that combines personal, office, and media organizers into a single, user-friendly interface. Features automatic sorting, duplicate detection, and batch processing.</p>
                             <div class="project-tags">
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">CSS Grid</span>
-                                <span class="tag">HTML5</span>
-                                <span class="tag">Local Storage</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">PyQt6</span>
+                                <span class="tag">Desktop App</span>
+                                <span class="tag">File Management</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                                <a href="https://github.com/justelson/The-organizer-apps" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Download</a>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Project 2: Finance Tracker -->
+                    <!-- Project 2: Shop-pal -->
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(45deg, #502a3a, #7C005A);"></div>
+                        <div class="project-image">
+                            <img src="img/Screenshot 2025-07-31 172429.png" alt="Shop-pal Dashboard Preview" class="project-preview-img">
+                            <div class="project-overlay">
+                                <div class="project-demo-badge">
+                                    <span>📊 Live Dashboard</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h3 class="project-title">Personal Finance Tracker</h3>
-                            <p class="project-description">A simple, privacy-focused app to track income and expenses. Visualizes data using Chart.js and works offline as a PWA.</p>
+                            <h3 class="project-title">Shop-pal (ShopTracker Pro)</h3>
+                            <p class="project-description">Modern, browser-based sales and inventory management system for small businesses. Features dashboard analytics, product management, sales tracking, and report generation—all stored locally.</p>
                             <div class="project-tags">
-                                <span class="tag">React</span>
+                                <span class="tag">JavaScript</span>
                                 <span class="tag">Chart.js</span>
-                                <span class="tag">PWA</span>
+                                <span class="tag">Local Storage</span>
+                                <span class="tag">Business Tools</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                                <button class="btn btn-primary" onclick="showDownloadPopup('shop-pal')">Download</button>
+                                <a href="https://github.com/justelson/Shop-pal" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Project 3: Blog Platform -->
+                    <!-- Project 3: Virtual Piano -->
                     <div class="project-card">
-                        <div class="project-image" style="background: linear-gradient(45deg, #2a503a, #007C5A);"></div>
+                        <div class="project-image">
+                            <img src="img/chrome_9AFd78aC91.png" alt="Virtual Piano Interface" class="project-preview-img">
+                            <div class="project-overlay">
+                                <div class="project-demo-badge">
+                                    <span>🎹 Interactive Piano</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="project-content">
-                            <h3 class="project-title">Markdown Blog Engine</h3>
-                            <p class="project-description">A lightweight, file-based blog engine that renders posts from Markdown files. No database needed. Perfect for developers who love writing.</p>
+                            <h3 class="project-title">Virtual Piano</h3>
+                            <p class="project-description">Professional-grade virtual piano with realistic sound synthesis using multiple harmonics, octave-dependent characteristics, and Web Audio API. Features keyboard mapping and responsive design.</p>
                             <div class="project-tags">
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Express</span>
-                                <span class="tag">Markdown-it</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">Web Audio API</span>
+                                <span class="tag">HTML5</span>
+                                <span class="tag">Music</span>
                             </div>
                             <div class="project-links">
-                                <a href="#" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                                <a href="#" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                                <a href="https://justelson.github.io/Virtual-piano/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://github.com/justelson/Virtual-piano" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Add more project cards here -->
+
+                    <!-- Project 4: Shapie (Geometric Calculators) -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/chrome_cEELnbdFIN.png" alt="Shapie Geometric Calculators" class="project-preview-img">
+                            <div class="project-overlay">
+                                <div class="project-demo-badge">
+                                    <span>📐 Math Tools</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Shapie - Geometric Calculators</h3>
+                            <p class="project-description">Collection of user-friendly, web-based calculators for geometric shapes including circles, rectangles, triangles, and trapeziums. Features dynamic inputs and educational fun facts.</p>
+                            <div class="project-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">Mathematics</span>
+                                <span class="tag">Education</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://justelson.github.io/shapie/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                                <a href="https://github.com/justelson/shapie" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -145,6 +206,51 @@
             </div>
         </div>
     </footer>
+
+    <!-- Download Popup -->
+    <div id="downloadPopup" class="popup-overlay">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h3>Download Shop-pal</h3>
+                <button class="popup-close" onclick="closeDownloadPopup()">&times;</button>
+            </div>
+            <div class="popup-body">
+                <p>To download and run Shop-pal locally, follow these steps:</p>
+                <div class="download-steps">
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <div class="step-content">
+                            <h4>Clone the Repository</h4>
+                            <div class="code-block">
+                                <code>git clone https://github.com/justelson/Shop-pal.git</code>
+                                <button class="copy-btn" onclick="copyToClipboard('git clone https://github.com/justelson/Shop-pal.git')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <div class="step-content">
+                            <h4>Navigate to Directory</h4>
+                            <div class="code-block">
+                                <code>cd Shop-pal</code>
+                                <button class="copy-btn" onclick="copyToClipboard('cd Shop-pal')">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <div class="step-content">
+                            <h4>Open in Browser</h4>
+                            <p>Simply open <code>index.html</code> in your preferred web browser. No installation required!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-footer">
+                    <p><strong>Note:</strong> Shop-pal runs entirely in your browser with no server setup needed. All data is stored locally.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script defer src="js/app.js"></script>
 </body>

@@ -165,3 +165,78 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+// -- Download Popup Functions ---
+
+/**
+ * Shows the download popup for a specific project
+ * @param {string} projectId - The ID of the project
+ */
+function showDownloadPopup(projectId) {
+    const popup = document.getElementById('downloadPopup');
+    if (popup) {
+        popup.classList.add('show');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+/**
+ * Closes the download popup
+ */
+function closeDownloadPopup() {
+    const popup = document.getElementById('downloadPopup');
+    if (popup) {
+        popup.classList.remove('show');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+/**
+ * Copies text to clipboard
+ * @param {string} text - The text to copy
+ */
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(() => {
+        // Show temporary feedback
+        const copyBtns = document.querySelectorAll('.copy-btn');
+        copyBtns.forEach(btn => {
+            if (btn.onclick && btn.onclick.toString().includes(text)) {
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = 'var(--success-color)';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                }, 2000);
+            }
+        });
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    });
+}
+
+// Close popup when clicking outside of it
+document.addEventListener('click', (e) => {
+    const popup = document.getElementById('downloadPopup');
+    if (popup && e.target === popup) {
+        closeDownloadPopup();
+    }
+});
+
+// Close popup with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeDownloadPopup();
+    }
+});
+
+// Make functions globally available
+window.showDownloadPopup = showDownloadPopup;
+window.closeDownloadPopup = closeDownloadPopup;
+window.copyToClipboard = copyToClipboard;
