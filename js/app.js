@@ -164,6 +164,33 @@ document.addEventListener('DOMContentLoaded', () => {
             toggleMobileMenu();
         }
     });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mainNav && mainNav.classList.contains('active') && 
+            !mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+            toggleMobileMenu();
+        }
+    });
+
+    // Handle focus management for mobile menu
+    if (mainNav) {
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach((link, index) => {
+            link.addEventListener('keydown', (e) => {
+                if (e.key === 'Tab' && mainNav.classList.contains('active')) {
+                    // Trap focus within mobile menu
+                    if (e.shiftKey && index === 0) {
+                        e.preventDefault();
+                        navLinks[navLinks.length - 1].focus();
+                    } else if (!e.shiftKey && index === navLinks.length - 1) {
+                        e.preventDefault();
+                        navLinks[0].focus();
+                    }
+                }
+            });
+        });
+    }
 });
 // -- Download Popup Functions ---
 
@@ -173,10 +200,47 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function showDownloadPopup(projectId) {
     const popup = document.getElementById('downloadPopup');
-    if (popup) {
-        popup.classList.add('show');
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
-    }
+    if (!popup) return;
+
+    // Project configurations
+    const projects = {
+        'shop-pal': {
+            title: 'Download Shop-pal',
+            description: 'To download and run Shop-pal locally, follow these steps:',
+            repoUrl: 'https://github.com/justelson/Shop-pal.git',
+            folderName: 'Shop-pal',
+            runTitle: 'Open in Browser',
+            runInstructions: 'Simply open <code>index.html</code> in your preferred web browser. No installation required!',
+            note: '<strong>Note:</strong> Shop-pal runs entirely in your browser with no server setup needed. All data is stored locally.'
+        },
+        'organizer': {
+            title: 'Download Unified File Organizer',
+            description: 'To download and run the Unified File Organizer, follow these steps:',
+            repoUrl: 'https://github.com/justelson/The-organizer-apps.git',
+            folderName: 'The-organizer-apps',
+            runTitle: 'Run the Application',
+            runInstructions: 'Install Python 3.8+ and required dependencies, then run <code>python UNIFIED_organizer.py</code>',
+            note: '<strong>Note:</strong> This is a Python desktop application. Check the README for detailed installation instructions.'
+        }
+    };
+
+    const project = projects[projectId];
+    if (!project) return;
+
+    // Update popup content
+    document.getElementById('popupTitle').textContent = project.title;
+    document.getElementById('popupDescription').textContent = project.description;
+    document.getElementById('cloneCommand').textContent = `git clone ${project.repoUrl}`;
+    document.getElementById('cdCommand').textContent = `cd ${project.folderName}`;
+    document.getElementById('runTitle').textContent = project.runTitle;
+    document.getElementById('runInstructions').innerHTML = project.runInstructions;
+    document.getElementById('popupNote').innerHTML = project.note;
+
+    // Store current project for copy functions
+    window.currentProject = project;
+
+    popup.classList.add('show');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
 /**
@@ -191,24 +255,39 @@ function closeDownloadPopup() {
 }
 
 /**
+ * Copies the clone command to clipboard
+ */
+function copyCloneCommand() {
+    const text = document.getElementById('cloneCommand').textContent;
+    copyToClipboard(text, 'cloneCopyBtn');
+}
+
+/**
+ * Copies the cd command to clipboard
+ */
+function copyCdCommand() {
+    const text = document.getElementById('cdCommand').textContent;
+    copyToClipboard(text, 'cdCopyBtn');
+}
+
+/**
  * Copies text to clipboard
  * @param {string} text - The text to copy
+ * @param {string} buttonId - The ID of the button that was clicked
  */
-function copyToClipboard(text) {
+function copyToClipboard(text, buttonId) {
     navigator.clipboard.writeText(text).then(() => {
         // Show temporary feedback
-        const copyBtns = document.querySelectorAll('.copy-btn');
-        copyBtns.forEach(btn => {
-            if (btn.onclick && btn.onclick.toString().includes(text)) {
-                const originalText = btn.textContent;
-                btn.textContent = 'Copied!';
-                btn.style.background = 'var(--success-color)';
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.style.background = '';
-                }, 2000);
-            }
-        });
+        const btn = document.getElementById(buttonId);
+        if (btn) {
+            const originalText = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.style.background = 'var(--success-color)';
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = '';
+            }, 2000);
+        }
     }).catch(err => {
         console.error('Failed to copy text: ', err);
         // Fallback for older browsers
@@ -240,3 +319,5 @@ document.addEventListener('keydown', (e) => {
 window.showDownloadPopup = showDownloadPopup;
 window.closeDownloadPopup = closeDownloadPopup;
 window.copyToClipboard = copyToClipboard;
+window.copyCloneCommand = copyCloneCommand;
+window.copyCdCommand = copyCdCommand;

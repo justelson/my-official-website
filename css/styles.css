@@ -5,25 +5,29 @@ Modern Dark Theme - Refactored by Gemini
 */
 
 :root {
-    /* Color Palette */
-    --primary-color: #89ddff;      /* A bright, friendly blue */
-    --secondary-color: #00A9C3;    /* A deeper cyan for primary actions */
-    --background-color: #0d1117;  /* Deep, near-black for the background */
-    --card-bg: #161b22;            /* Slightly lighter background for cards */
-    --text-color: #c9d1d9;        /* Light grey for body text */
-    --text-muted: #8b949e;        /* Muted grey for secondary text */
-    --border-color: #30363d;      /* Subtle border color */
-    --success-color: #2ea043;
-    --error-color: #f85149;
-    --hover-glow-color: rgba(137, 221, 255, 0.2);
+    /* Color Palette - Inspired by Icon Illustrations */
+    --primary-color: #7B5FF1;      /* Purple from icons */
+    --secondary-color: #55D087;    /* Green from icons */
+    --accent-color: #FF8B37;       /* Orange from icons */
+    --background-color: #0a0a1a;   /* Deeper dark with purple undertones */
+    --card-bg: #1a1a2e;            /* Slightly lighter purple-tinted background */
+    --light-bg: #E3E3FF;           /* Light purple from icons */
+    --text-color: #f0f0f8;         /* Improved contrast for accessibility */
+    --text-muted: #b8b8d0;         /* Better contrast while maintaining theme */
+    --border-color: #2d2d4a;       /* Purple-tinted border */
+    --success-color: #55D087;      /* Using green from icons */
+    --error-color: #ff6b6b;
+    --hover-glow-color: rgba(123, 95, 241, 0.3);
 
-    /* Gradients */
-    --gradient-hero: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    /* Enhanced Gradients */
+    --gradient-hero: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+    --gradient-card: linear-gradient(135deg, rgba(123, 95, 241, 0.05), rgba(85, 208, 135, 0.05));
     
     /* Shadows & Effects */
-    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
-    --shadow-lifted: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --shadow-glow: 0 0 20px var(--hover-glow-color);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-lifted: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 30px var(--hover-glow-color);
+    --shadow-icon: 0 4px 12px rgba(123, 95, 241, 0.2);
 
     /* Spacing */
     --space-xs: 0.5rem;   /* 8px */
@@ -34,13 +38,13 @@ Modern Dark Theme - Refactored by Gemini
     --space-xxl: 6rem;    /* 96px */
 
     /* Borders & Radius */
-    --border-radius-md: 8px;
-    --border-radius-lg: 16px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
     --border-width: 1px;
 
     /* Transitions */
     --transition-speed: 0.3s;
-    --transition-easing: ease-in-out;
+    --transition-easing: cubic-bezier(0.4, 0, 0.2, 1);
 
     /* Fonts */
     --font-family-heading: 'Outfit', sans-serif;
@@ -195,6 +199,30 @@ section {
     margin: 0 auto;
 }
 
+.hero-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--space-lg) auto;
+    background: rgba(123, 95, 241, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(123, 95, 241, 0.2);
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-svg {
+    width: 70px;
+    height: 70px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
 .title {
     font-family: var(--font-family-heading);
     font-size: clamp(2.5rem, 5vw, 4rem);
@@ -216,7 +244,9 @@ section {
 
 /* --- Buttons --- */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
     padding: 0.8rem 1.8rem;
     border-radius: 50px;
     text-decoration: none;
@@ -224,6 +254,25 @@ section {
     border: var(--border-width) solid transparent;
     transition: all var(--transition-speed) var(--transition-easing);
     cursor: pointer;
+}
+
+.btn-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    transition: transform var(--transition-speed) var(--transition-easing);
+}
+
+.btn:hover .btn-icon {
+    transform: scale(1.1);
+}
+
+.btn-secondary .btn-icon {
+    filter: brightness(0) saturate(100%) invert(47%) sepia(79%) saturate(2476%) hue-rotate(246deg) brightness(95%) contrast(97%);
+}
+
+.btn-secondary:hover .btn-icon {
+    filter: brightness(0) invert(1);
 }
 
 .btn-primary {
@@ -311,7 +360,30 @@ section {
 }
 
 .content-box p { color: var(--text-muted); }
-.feature-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.feature-icon { 
+    width: 80px; 
+    height: 80px; 
+    margin-bottom: 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(123, 95, 241, 0.1);
+    border-radius: var(--border-radius-lg);
+    border: 2px solid rgba(123, 95, 241, 0.2);
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+
+.feature-icon:hover {
+    background: rgba(123, 95, 241, 0.2);
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+}
+
+.feature-svg {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
 
 /* --- Projects Page --- */
 .project-grid {
@@ -512,31 +584,157 @@ textarea.form-input { resize: vertical; }
 }
 
 /* --- Media Queries for Responsiveness --- */
-@media (max-width: 992px) {
-    .bento-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 var(--space-md);
+    }
+    
+    .hero-section {
+        padding: 6rem 0 4rem;
+        min-height: auto;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
     }
 }
 
 @media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+    
     .main-nav {
         position: fixed;
         top: 0;
         right: -100%;
-        width: min(80vw, 300px);
+        width: min(85vw, 320px);
         height: 100vh;
         background: var(--card-bg);
         transition: right var(--transition-speed) var(--transition-easing);
-        padding: 6rem var(--space-md);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+        padding: 5rem var(--space-md);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
         z-index: 999;
+        overflow-y: auto;
     }
-    .main-nav.active { right: 0; }
-    .main-nav ul { flex-direction: column; align-items: flex-start; gap: var(--space-lg); }
-    .mobile-menu-btn { display: flex; }
-    .footer-grid { text-align: center; }
-    .footer-col ul, .social-links { justify-content: center; }
+    
+    .main-nav.active { 
+        right: 0; 
+    }
+    
+    .main-nav ul { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: var(--space-md); 
+    }
+    
+    .mobile-menu-btn { 
+        display: flex; 
+        z-index: 1000;
+    }
+    
+    .footer-grid { 
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+        text-align: center; 
+    }
+    
+    .footer-col ul, 
+    .social-links { 
+        justify-content: center; 
+    }
+    
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+    
+    .stat-item {
+        padding: var(--space-sm);
+    }
+    
+    /* Make buttons more touch-friendly */
+    .btn {
+        padding: 0.9rem 1.5rem;
+        min-width: 120px;
+    }
+    
+    /* Improve form elements for touch */
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+    
+    /* Adjust section padding */
+    section {
+        padding: 3rem 0;
+    }
+    
+    /* Improve mobile menu touch targets */
+    .main-nav a {
+        padding: 0.75rem 0;
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+    }
 }
+
+@media (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Make sure images don't overflow on small screens */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    /* Improve button touch targets */
+    .btn {
+        padding: 1rem 1.5rem;
+    }
+    
+    /* Adjust popup padding */
+    .popup-content {
+        width: 95%;
+        padding: var(--space-md);
+    }
+}
+
 /* Do
 wnload Popup Styles */
 .popup-overlay {
@@ -797,7 +995,7 @@ wnload Popup Styles */
 }
 
 .project-demo-badge {
-    background: rgba(137, 221, 255, 0.9);
+    background: rgba(227, 227, 255, 0.95);
     color: var(--background-color);
     padding: var(--space-xs) var(--space-sm);
     border-radius: 20px;
@@ -805,6 +1003,15 @@ wnload Popup Styles */
     font-size: 0.875rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.badge-icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 }
 
 /* Enhanced Project Cards */
