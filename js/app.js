@@ -9,6 +9,7 @@
  * - Scroll progress bar
  * - Page element fade-in transitions
  * - Asynchronous contact form submission
+ * - Theme toggle functionality
  */
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -19,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainNav = document.querySelector('.main-nav');
     const pageElements = document.querySelectorAll('.page-transition');
     const contactForm = document.getElementById('contactForm');
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcons = {
+        dark: document.querySelector('.theme-icon-dark'),
+        light: document.querySelector('.theme-icon-light')
+    };
 
     
     // --- Utility Functions ---
@@ -141,14 +147,66 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
+    // --- Theme Functions ---
+
+    /**
+     * Toggles between light and dark themes
+     */
+    const toggleTheme = () => {
+        const isLight = document.documentElement.classList.toggle('light-theme');
+        const theme = isLight ? 'light' : 'dark';
+        
+        // Save preference to localStorage
+        localStorage.setItem('theme', theme);
+        
+        // Dispatch custom event for any other scripts that might need to know about theme changes
+        document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
+    };
+
+    /**
+     * Initializes the theme based on user preference or system settings
+     */
+    const initTheme = () => {
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Apply theme
+        if (savedTheme === 'light' || (!savedTheme && !prefersDark)) {
+            document.documentElement.classList.add('light-theme');
+        } else {
+            document.documentElement.classList.remove('light-theme');
+        }
+    };
+
     // --- Initialization & Event Listeners ---
 
-    // Initial call to set states correctly on page load
+    // Initial setup
+    initTheme();
     handleScroll();
     createPageTransitionObserver();
 
     // Attach event listeners
     window.addEventListener('scroll', throttle(handleScroll, 100)); // Throttled for performance
+    
+    // Theme toggle button
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+    
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Only apply system theme if user hasn't explicitly set a preference
+        if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+                document.documentElement.classList.remove('light-theme');
+                if (themeIcon) themeIcon.textContent = '🌙';
+            } else {
+                document.documentElement.classList.add('light-theme');
+                if (themeIcon) themeIcon.textContent = '🌞';
+            }
+        }
+    });
 
     if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', toggleMobileMenu);
