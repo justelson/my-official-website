@@ -1,29 +1,181 @@
 /*
 ================================================
-Modern Dark Theme - Refactored by Gemini
+Modern Theme with Custom Color Palette
 ================================================
 */
 
+/* Font Setup */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700|Raleway:400');
+
+/* Typography Scale */
+html {
+    font-size: 100%; /* 16px */
+}
+
+h1 {
+    font-size: 4.210rem; /* 67.36px */
+}
+
+h2 {
+    font-size: 3.158rem; /* 50.56px */
+}
+
+h3 {
+    font-size: 2.369rem; /* 37.92px */
+}
+
+h4 {
+    font-size: 1.777rem; /* 28.48px */
+}
+
+h5 {
+    font-size: 1.333rem; /* 21.28px */
+}
+
+small {
+    font-size: 0.750rem; /* 12px */
+}
+
+/* Color Theme Variables */
+@media (prefers-color-scheme: light) {
+    :root {
+        --text-50: #e7e8fd;
+        --text-100: #d0d2fb;
+        --text-200: #a1a5f7;
+        --text-300: #7178f4;
+        --text-400: #424bf0;
+        --text-500: #131eec;
+        --text-600: #0f18bd;
+        --text-700: #0b128e;
+        --text-800: #080c5e;
+        --text-900: #04062f;
+        --text-950: #020318;
+        --background-50: #e8e9fc;
+        --background-100: #d1d4fa;
+        --background-200: #a3a9f5;
+        --background-300: #757df0;
+        --background-400: #4752eb;
+        --background-500: #1927e6;
+        --background-600: #141fb8;
+        --background-700: #0f178a;
+        --background-800: #0a105c;
+        --background-900: #05082e;
+        --background-950: #030417;
+        --primary-50: #e8eafd;
+        --primary-100: #d1d6fa;
+        --primary-200: #a3acf5;
+        --primary-300: #7583f0;
+        --primary-400: #465aec;
+        --primary-500: #1830e7;
+        --primary-600: #1327b9;
+        --primary-700: #0f1d8a;
+        --primary-800: #0a135c;
+        --primary-900: #050a2e;
+        --primary-950: #020517;
+        --secondary-50: #fdf2e8;
+        --secondary-100: #fae5d1;
+        --secondary-200: #f6cba2;
+        --secondary-300: #f1b074;
+        --secondary-400: #ed9645;
+        --secondary-500: #e87c17;
+        --secondary-600: #ba6312;
+        --secondary-700: #8b4a0e;
+        --secondary-800: #5d3209;
+        --secondary-900: #2e1905;
+        --secondary-950: #170c02;
+        --accent-50: #f4fde8;
+        --accent-100: #e9fad1;
+        --accent-200: #d3f6a2;
+        --accent-300: #bdf174;
+        --accent-400: #a7ed45;
+        --accent-500: #91e817;
+        --accent-600: #74ba12;
+        --accent-700: #578b0e;
+        --accent-800: #3a5d09;
+        --accent-900: #1d2e05;
+        --accent-950: #0e1702;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-50: #020318;
+        --text-100: #04062f;
+        --text-200: #080c5e;
+        --text-300: #0b128e;
+        --text-400: #0f18bd;
+        --text-500: #131eec;
+        --text-600: #424bf0;
+        --text-700: #7178f4;
+        --text-800: #a1a5f7;
+        --text-900: #d0d2fb;
+        --text-950: #e7e8fd;
+        --background-50: #030317;
+        --background-100: #05072e;
+        --background-200: #0b0d5b;
+        --background-300: #101489;
+        --background-400: #151bb7;
+        --background-500: #1b21e4;
+        --background-600: #484eea;
+        --background-700: #767aef;
+        --background-800: #a4a6f4;
+        --background-900: #d1d3fa;
+        --background-950: #e8e9fc;
+        --primary-50: #020517;
+        --primary-100: #050a2e;
+        --primary-200: #0a135c;
+        --primary-300: #0f1d8a;
+        --primary-400: #1327b9;
+        --primary-500: #1830e7;
+        --primary-600: #465aec;
+        --primary-700: #7583f0;
+        --primary-800: #a3acf5;
+        --primary-900: #d1d6fa;
+        --primary-950: #e8eafd;
+        --secondary-50: #170c02;
+        --secondary-100: #2e1905;
+        --secondary-200: #5d3209;
+        --secondary-300: #8b4a0e;
+        --secondary-400: #ba6312;
+        --secondary-500: #e87c17;
+        --secondary-600: #ed9645;
+        --secondary-700: #f1b074;
+        --secondary-800: #f6cba2;
+        --secondary-900: #fae5d1;
+        --secondary-950: #fdf2e8;
+        --accent-50: #0e1702;
+        --accent-100: #1d2e05;
+        --accent-200: #3a5d09;
+        --accent-300: #578b0e;
+        --accent-400: #74ba12;
+        --accent-500: #91e817;
+        --accent-600: #a7ed45;
+        --accent-700: #bdf174;
+        --accent-800: #d3f6a2;
+        --accent-900: #e9fad1;
+        --accent-950: #f4fde8;
+    }
+}
+
 :root {
-    /* Color Palette - Inspired by Icon Illustrations */
-    --primary-color: #7B5FF1;      /* Purple from icons */
-    --secondary-color: #55D087;    /* Green from icons */
-    --accent-color: #FF8B37;       /* Orange from icons */
-    --background-color: #0a0a1a;   /* Deeper dark with purple undertones */
-    --card-bg: #1a1a2e;            /* Slightly lighter purple-tinted background */
-    --light-bg: #E3E3FF;           /* Light purple from icons */
-    --text-color: #f0f0f8;         /* Improved contrast for accessibility */
-    --text-muted: #b8b8d0;         /* Better contrast while maintaining theme */
-    --border-color: #2d2d4a;       /* Purple-tinted border */
-    --success-color: #55D087;      /* Using green from icons */
+    /* Semantic Color Mappings */
+    --primary-color: var(--primary-500);
+    --secondary-color: var(--secondary-500);
+    --accent-color: var(--accent-500);
+    --background-color: var(--background-50);
+    --card-bg: var(--background-100);
+    --text-color: var(--text-900);
+    --text-muted: var(--text-700);
+    --border-color: var(--background-300);
+    --success-color: var(--accent-500);
     --error-color: #ff6b6b;
-    --hover-glow-color: rgba(123, 95, 241, 0.3);
+    --hover-glow-color: rgba(24, 48, 231, 0.3);
     
     /* Theme toggle button */
-    --theme-toggle-bg: var(--card-bg);
-    --theme-toggle-text: var(--text-color);
-    --theme-toggle-hover: var(--primary-color);
-    --theme-icon-color: var(--text-color);
+    --theme-toggle-bg: var(--background-200);
+    --theme-toggle-text: var(--text-700);
+    --theme-toggle-hover: var(--primary-200);
+    --theme-icon-color: var(--text-700);
 
     /* Enhanced Gradients */
     --gradient-hero: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
@@ -70,7 +222,8 @@ html {
 }
 
 body {
-    font-family: var(--font-family-body);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.7;
@@ -79,8 +232,33 @@ body {
     overflow-x: hidden;
 }
 
+h1, h2, h3, h4, h5 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
 body.menu-open {
     overflow: hidden;
+}
+
+/* Mobile menu backdrop */
+.mobile-menu-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+
+.mobile-menu-backdrop.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* --- Layout --- */
@@ -95,60 +273,7 @@ section {
     padding: var(--space-xl) 0;
 }
 
-/* --- Theme Toggle --- */
-.theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 8px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    color: var(--theme-icon-color);
-}
 
-.theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.theme-icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    position: relative;
-}
-
-.theme-icon-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
-
-/* Hide light icon by default */
-.theme-icon-light {
-    opacity: 0;
-    transform: rotate(30deg);
-}
-
-/* In light theme, show light icon and hide dark icon */
-.light-theme .theme-icon-dark {
-    opacity: 0;
-    transform: rotate(-30deg);
-}
-
-.light-theme .theme-icon-light {
-    opacity: 1;
-    transform: rotate(0);
-}
 
 /* --- Header & Navigation --- */
 .scroll-progress {
@@ -167,7 +292,8 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(13, 17, 23, 0.7);
+    background-color: var(--card-bg);
+    opacity: 0.85;
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all var(--transition-speed) var(--transition-easing);
@@ -175,16 +301,12 @@ section {
 }
 
 .site-header.scrolled {
-    background-color: rgba(13, 17, 23, 0.9);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.light-theme .site-header {
-    background-color: rgba(255, 255, 255, 0.7);
+    opacity: 0.95;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .light-theme .site-header.scrolled {
-    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .site-header .container {
@@ -196,7 +318,7 @@ section {
 }
 
 .logo-text {
-    font-family: var(--font-family-heading);
+    font-family: 'Raleway', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-color);
@@ -236,29 +358,58 @@ section {
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     cursor: pointer;
     z-index: 1001;
-    background: none;
-    border: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 8px;
+    transition: all var(--transition-speed) var(--transition-easing);
+}
+
+.mobile-menu-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.mobile-menu-btn:hover span {
+    background-color: var(--background-color);
 }
 
 .mobile-menu-btn span {
-    width: 25px;
+    width: 20px;
     height: 2px;
     background-color: var(--text-color);
-    transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+    transition: all var(--transition-speed) ease;
+    border-radius: 1px;
 }
 
-.mobile-menu-btn.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
-.mobile-menu-btn.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu-btn.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.mobile-menu-btn.active span {
+    background-color: var(--background-color);
+}
+
+.mobile-menu-btn.active span:nth-child(1) { 
+    transform: translateY(6px) rotate(45deg); 
+}
+.mobile-menu-btn.active span:nth-child(2) { 
+    opacity: 0; 
+    transform: scale(0);
+}
+.mobile-menu-btn.active span:nth-child(3) { 
+    transform: translateY(-6px) rotate(-45deg); 
+}
 
 /* Theme Toggle Button */
 .theme-toggle {
     background: var(--theme-toggle-bg);
     color: var(--theme-toggle-text);
-    border: none;
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -267,14 +418,15 @@ section {
     justify-content: center;
     cursor: pointer;
     transition: all var(--transition-speed) var(--transition-easing);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     padding: 0;
     margin-left: 1rem;
 }
 
 .theme-toggle:hover {
     background: var(--theme-toggle-hover);
-    transform: scale(1.1);
+    border-color: var(--primary-color);
+    transform: scale(1.05);
 }
 
 .theme-toggle:focus {
@@ -283,20 +435,74 @@ section {
 }
 
 .theme-icon {
-    font-size: 1.25rem;
-    transition: transform 0.3s ease;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
 }
 
-/* Light Theme */
+.theme-icon-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Hide light icon by default (dark theme) */
+.theme-icon-light {
+    opacity: 0;
+    transform: rotate(30deg);
+}
+
+/* In light theme, show light icon and hide dark icon */
+.light-theme .theme-icon-dark {
+    opacity: 0;
+    transform: rotate(-30deg);
+}
+
+.light-theme .theme-icon-light {
+    opacity: 1;
+    transform: rotate(0);
+}
+
+/* Light Theme Override */
 .light-theme {
-    --background-color: #ffffff;
-    --card-bg: #f5f5ff;
-    --text-color: #33334d;
-    --text-muted: #66668f;
-    --border-color: #d1d1e0;
-    --theme-toggle-bg: #e0e0ff;
-    --theme-toggle-text: #4a4a6a;
-    --theme-toggle-hover: #c7c7e0;
+    --primary-color: var(--primary-500);
+    --secondary-color: var(--secondary-500);
+    --accent-color: var(--accent-500);
+    --background-color: var(--background-50);
+    --card-bg: var(--background-100);
+    --text-color: var(--text-900);
+    --text-muted: var(--text-700);
+    --border-color: var(--background-300);
+    --success-color: var(--accent-500);
+    --hover-glow-color: rgba(24, 48, 231, 0.3);
+    --theme-toggle-bg: var(--background-200);
+    --theme-toggle-text: var(--text-800);
+    --theme-toggle-hover: var(--primary-200);
+}
+
+/* Dark Theme Override */
+.dark-theme, :root:not(.light-theme) {
+    --primary-color: var(--primary-500);
+    --secondary-color: var(--secondary-500);
+    --accent-color: var(--accent-500);
+    --background-color: var(--background-950);
+    --card-bg: var(--background-900);
+    --text-color: var(--text-100);
+    --text-muted: var(--text-300);
+    --border-color: var(--background-700);
+    --success-color: var(--accent-500);
+    --hover-glow-color: rgba(24, 48, 231, 0.3);
+    --theme-toggle-bg: var(--background-800);
+    --theme-toggle-text: var(--text-200);
+    --theme-toggle-hover: var(--primary-700);
 }
 
 /* Smooth theme transition */
@@ -461,16 +667,18 @@ body, body * {
     color: var(--text-color);
 }
 
-/* --- Bento Grid --- */
+/* --- Features Grid --- */
 .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: var(--space-md);
+    justify-content: center;
 }
 
 .bento-item {
-    grid-column: span var(--bento-span-col, 1);
-    grid-row: span var(--bento-span-row, 1);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
 }
 
 .content-box h3 {
@@ -732,6 +940,16 @@ textarea.form-input { resize: vertical; }
         width: 100%;
         text-align: center;
     }
+    
+    /* Features section for tablets */
+    .bento-grid {
+        justify-content: space-between;
+    }
+    
+    .bento-item {
+        min-width: 300px;
+        max-width: 320px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -739,33 +957,100 @@ textarea.form-input { resize: vertical; }
         font-size: 14px;
     }
     
+    /* Ensure header layout is maintained */
+    .site-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    
+    /* Mobile Navigation Overlay */
     .main-nav {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: min(85vw, 320px);
+        left: 0;
+        width: 100%;
         height: 100vh;
-        background: var(--card-bg);
-        transition: right var(--transition-speed) var(--transition-easing);
-        padding: 5rem var(--space-md);
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        background: var(--background-color);
+        transform: translateY(-100%);
+        transition: transform var(--transition-speed) var(--transition-easing);
+        padding: 6rem var(--space-lg) var(--space-lg);
         z-index: 999;
         overflow-y: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
     .main-nav.active { 
-        right: 0; 
+        transform: translateY(0);
     }
     
     .main-nav ul { 
         flex-direction: column; 
-        align-items: flex-start; 
-        gap: var(--space-md); 
+        align-items: center; 
+        gap: var(--space-lg);
+        text-align: center;
+        width: 100%;
+    }
+    
+    .main-nav li {
+        width: 100%;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: var(--space-md) var(--space-lg);
+        font-size: 1.25rem;
+        font-weight: 600;
+        border-radius: var(--border-radius-md);
+        background: var(--card-bg);
+        border: 1px solid var(--border-color);
+        transition: all var(--transition-speed) var(--transition-easing);
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    .main-nav a:hover,
+    .main-nav a.active {
+        background: var(--primary-color);
+        color: var(--background-color);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Theme toggle in mobile menu */
+    .theme-toggle-container {
+        margin-top: var(--space-md);
     }
     
     .mobile-menu-btn { 
         display: flex; 
         z-index: 1000;
+        position: relative;
+    }
+    
+    /* Ensure logo is always visible in mobile */
+    .logo {
+        z-index: 1001;
+        position: relative;
+        flex-shrink: 0;
+    }
+    
+    .logo-text {
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: block;
+        padding: 0.5rem 0;
+        white-space: nowrap;
+    }
+    
+    /* Make sure header elements don't overlap */
+    .site-header .container {
+        min-height: 60px;
     }
     
     .footer-grid { 
@@ -790,6 +1075,16 @@ textarea.form-input { resize: vertical; }
     
     .stat-item {
         padding: var(--space-sm);
+    }
+    
+    /* Features section responsive */
+    .bento-grid {
+        flex-direction: column;
+    }
+    
+    .bento-item {
+        max-width: none;
+        min-width: auto;
     }
     
     /* Make buttons more touch-friendly */

@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrollProgress = document.querySelector('.scroll-progress');
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const mainNav = document.querySelector('.main-nav');
+    const mobileBackdrop = document.querySelector('.mobile-menu-backdrop');
     const pageElements = document.querySelectorAll('.page-transition');
     const contactForm = document.getElementById('contactForm');
     const themeToggle = document.getElementById('themeToggle');
@@ -79,6 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenuBtn.classList.toggle('active');
             mobileMenuBtn.setAttribute('aria-expanded', isExpanded);
             document.body.classList.toggle('menu-open', isExpanded);
+            
+            // Toggle backdrop
+            if (mobileBackdrop) {
+                mobileBackdrop.classList.toggle('active', isExpanded);
+            }
         }
     };
 
@@ -223,6 +229,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Close mobile menu when clicking backdrop
+    if (mobileBackdrop) {
+        mobileBackdrop.addEventListener('click', () => {
+            if (mainNav && mainNav.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+    }
+
     // Close mobile menu when clicking outside
     document.addEventListener('click', (e) => {
         if (mainNav && mainNav.classList.contains('active') && 
@@ -231,10 +246,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Handle focus management for mobile menu
+    // Handle focus management for mobile menu and auto-close on link click
     if (mainNav) {
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach((link, index) => {
+            // Auto-close mobile menu when clicking navigation links
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+            
             link.addEventListener('keydown', (e) => {
                 if (e.key === 'Tab' && mainNav.classList.contains('active')) {
                     // Trap focus within mobile menu
