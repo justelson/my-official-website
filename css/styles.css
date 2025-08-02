@@ -36,156 +36,149 @@ small {
     font-size: 0.750rem; /* 12px */
 }
 
-/* Color Theme Variables */
+/* Modern Professional Color Theme */
 @media (prefers-color-scheme: light) {
     :root {
-        --text-50: #e7e8fd;
-        --text-100: #d0d2fb;
-        --text-200: #a1a5f7;
-        --text-300: #7178f4;
-        --text-400: #424bf0;
-        --text-500: #131eec;
-        --text-600: #0f18bd;
-        --text-700: #0b128e;
-        --text-800: #080c5e;
-        --text-900: #04062f;
-        --text-950: #020318;
-        --background-50: #e8e9fc;
-        --background-100: #d1d4fa;
-        --background-200: #a3a9f5;
-        --background-300: #757df0;
-        --background-400: #4752eb;
-        --background-500: #1927e6;
-        --background-600: #141fb8;
-        --background-700: #0f178a;
-        --background-800: #0a105c;
-        --background-900: #05082e;
-        --background-950: #030417;
-        --primary-50: #e8eafd;
-        --primary-100: #d1d6fa;
-        --primary-200: #a3acf5;
-        --primary-300: #7583f0;
-        --primary-400: #465aec;
-        --primary-500: #1830e7;
-        --primary-600: #1327b9;
-        --primary-700: #0f1d8a;
-        --primary-800: #0a135c;
-        --primary-900: #050a2e;
-        --primary-950: #020517;
-        --secondary-50: #fdf2e8;
-        --secondary-100: #fae5d1;
-        --secondary-200: #f6cba2;
-        --secondary-300: #f1b074;
-        --secondary-400: #ed9645;
-        --secondary-500: #e87c17;
-        --secondary-600: #ba6312;
-        --secondary-700: #8b4a0e;
-        --secondary-800: #5d3209;
-        --secondary-900: #2e1905;
-        --secondary-950: #170c02;
-        --accent-50: #f4fde8;
-        --accent-100: #e9fad1;
-        --accent-200: #d3f6a2;
-        --accent-300: #bdf174;
-        --accent-400: #a7ed45;
-        --accent-500: #91e817;
-        --accent-600: #74ba12;
-        --accent-700: #578b0e;
-        --accent-800: #3a5d09;
-        --accent-900: #1d2e05;
-        --accent-950: #0e1702;
+        /* Neutral Grays */
+        --neutral-50: #fafafa;
+        --neutral-100: #f5f5f5;
+        --neutral-200: #e5e5e5;
+        --neutral-300: #d4d4d4;
+        --neutral-400: #a3a3a3;
+        --neutral-500: #737373;
+        --neutral-600: #525252;
+        --neutral-700: #404040;
+        --neutral-800: #262626;
+        --neutral-900: #171717;
+        --neutral-950: #0a0a0a;
+        
+        /* Indigo Primary */
+        --primary-50: #eef2ff;
+        --primary-100: #e0e7ff;
+        --primary-200: #c7d2fe;
+        --primary-300: #a5b4fc;
+        --primary-400: #818cf8;
+        --primary-500: #6366f1;
+        --primary-600: #4f46e5;
+        --primary-700: #4338ca;
+        --primary-800: #3730a3;
+        --primary-900: #312e81;
+        --primary-950: #1e1b4b;
+        
+        /* Emerald Accent */
+        --accent-50: #ecfdf5;
+        --accent-100: #d1fae5;
+        --accent-200: #a7f3d0;
+        --accent-300: #6ee7b7;
+        --accent-400: #34d399;
+        --accent-500: #10b981;
+        --accent-600: #059669;
+        --accent-700: #047857;
+        --accent-800: #065f46;
+        --accent-900: #064e3b;
+        --accent-950: #022c22;
+        
+        /* Amber Secondary */
+        --secondary-50: #fffbeb;
+        --secondary-100: #fef3c7;
+        --secondary-200: #fde68a;
+        --secondary-300: #fcd34d;
+        --secondary-400: #fbbf24;
+        --secondary-500: #f59e0b;
+        --secondary-600: #d97706;
+        --secondary-700: #b45309;
+        --secondary-800: #92400e;
+        --secondary-900: #78350f;
+        --secondary-950: #451a03;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --text-50: #020318;
-        --text-100: #04062f;
-        --text-200: #080c5e;
-        --text-300: #0b128e;
-        --text-400: #0f18bd;
-        --text-500: #131eec;
-        --text-600: #424bf0;
-        --text-700: #7178f4;
-        --text-800: #a1a5f7;
-        --text-900: #d0d2fb;
-        --text-950: #e7e8fd;
-        --background-50: #030317;
-        --background-100: #05072e;
-        --background-200: #0b0d5b;
-        --background-300: #101489;
-        --background-400: #151bb7;
-        --background-500: #1b21e4;
-        --background-600: #484eea;
-        --background-700: #767aef;
-        --background-800: #a4a6f4;
-        --background-900: #d1d3fa;
-        --background-950: #e8e9fc;
-        --primary-50: #020517;
-        --primary-100: #050a2e;
-        --primary-200: #0a135c;
-        --primary-300: #0f1d8a;
-        --primary-400: #1327b9;
-        --primary-500: #1830e7;
-        --primary-600: #465aec;
-        --primary-700: #7583f0;
-        --primary-800: #a3acf5;
-        --primary-900: #d1d6fa;
-        --primary-950: #e8eafd;
-        --secondary-50: #170c02;
-        --secondary-100: #2e1905;
-        --secondary-200: #5d3209;
-        --secondary-300: #8b4a0e;
-        --secondary-400: #ba6312;
-        --secondary-500: #e87c17;
-        --secondary-600: #ed9645;
-        --secondary-700: #f1b074;
-        --secondary-800: #f6cba2;
-        --secondary-900: #fae5d1;
-        --secondary-950: #fdf2e8;
-        --accent-50: #0e1702;
-        --accent-100: #1d2e05;
-        --accent-200: #3a5d09;
-        --accent-300: #578b0e;
-        --accent-400: #74ba12;
-        --accent-500: #91e817;
-        --accent-600: #a7ed45;
-        --accent-700: #bdf174;
-        --accent-800: #d3f6a2;
-        --accent-900: #e9fad1;
-        --accent-950: #f4fde8;
+        /* Neutral Grays (inverted for dark) */
+        --neutral-50: #0a0a0a;
+        --neutral-100: #171717;
+        --neutral-200: #262626;
+        --neutral-300: #404040;
+        --neutral-400: #525252;
+        --neutral-500: #737373;
+        --neutral-600: #a3a3a3;
+        --neutral-700: #d4d4d4;
+        --neutral-800: #e5e5e5;
+        --neutral-900: #f5f5f5;
+        --neutral-950: #fafafa;
+        
+        /* Indigo Primary (same values) */
+        --primary-50: #1e1b4b;
+        --primary-100: #312e81;
+        --primary-200: #3730a3;
+        --primary-300: #4338ca;
+        --primary-400: #4f46e5;
+        --primary-500: #6366f1;
+        --primary-600: #818cf8;
+        --primary-700: #a5b4fc;
+        --primary-800: #c7d2fe;
+        --primary-900: #e0e7ff;
+        --primary-950: #eef2ff;
+        
+        /* Emerald Accent (same values) */
+        --accent-50: #022c22;
+        --accent-100: #064e3b;
+        --accent-200: #065f46;
+        --accent-300: #047857;
+        --accent-400: #059669;
+        --accent-500: #10b981;
+        --accent-600: #34d399;
+        --accent-700: #6ee7b7;
+        --accent-800: #a7f3d0;
+        --accent-900: #d1fae5;
+        --accent-950: #ecfdf5;
+        
+        /* Amber Secondary (same values) */
+        --secondary-50: #451a03;
+        --secondary-100: #78350f;
+        --secondary-200: #92400e;
+        --secondary-300: #b45309;
+        --secondary-400: #d97706;
+        --secondary-500: #f59e0b;
+        --secondary-600: #fbbf24;
+        --secondary-700: #fcd34d;
+        --secondary-800: #fde68a;
+        --secondary-900: #fef3c7;
+        --secondary-950: #fffbeb;
     }
 }
 
 :root {
     /* Semantic Color Mappings */
-    --primary-color: var(--primary-500);
+    --primary-color: var(--primary-600);
     --secondary-color: var(--secondary-500);
     --accent-color: var(--accent-500);
-    --background-color: var(--background-50);
-    --card-bg: var(--background-100);
-    --text-color: var(--text-900);
-    --text-muted: var(--text-700);
-    --border-color: var(--background-300);
+    --background-color: var(--neutral-50);
+    --card-bg: var(--neutral-100);
+    --text-color: var(--neutral-900);
+    --text-muted: var(--neutral-600);
+    --border-color: var(--neutral-200);
     --success-color: var(--accent-500);
-    --error-color: #ff6b6b;
-    --hover-glow-color: rgba(24, 48, 231, 0.3);
+    --error-color: #ef4444;
+    --warning-color: var(--secondary-500);
+    --hover-glow-color: rgba(99, 102, 241, 0.2);
     
     /* Theme toggle button */
-    --theme-toggle-bg: var(--background-200);
-    --theme-toggle-text: var(--text-700);
-    --theme-toggle-hover: var(--primary-200);
-    --theme-icon-color: var(--text-700);
+    --theme-toggle-bg: var(--neutral-200);
+    --theme-toggle-text: var(--neutral-700);
+    --theme-toggle-hover: var(--primary-100);
+    --theme-icon-color: var(--neutral-700);
 
     /* Enhanced Gradients */
-    --gradient-hero: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--accent-color));
-    --gradient-card: linear-gradient(135deg, rgba(123, 95, 241, 0.05), rgba(85, 208, 135, 0.05));
+    --gradient-hero: linear-gradient(135deg, var(--primary-600), var(--accent-500), var(--secondary-500));
+    --gradient-card: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(16, 185, 129, 0.05));
     
     /* Shadows & Effects */
-    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --shadow-lifted: 0 12px 32px rgba(0, 0, 0, 0.5);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-lifted: 0 12px 32px rgba(0, 0, 0, 0.12);
     --shadow-glow: 0 0 30px var(--hover-glow-color);
-    --shadow-icon: 0 4px 12px rgba(123, 95, 241, 0.2);
+    --shadow-icon: 0 4px 12px rgba(99, 102, 241, 0.15);
 
     /* Spacing */
     --space-xs: 0.5rem;   /* 8px */
@@ -473,36 +466,36 @@ section {
 
 /* Light Theme Override */
 .light-theme {
-    --primary-color: var(--primary-500);
+    --primary-color: var(--primary-600);
     --secondary-color: var(--secondary-500);
     --accent-color: var(--accent-500);
-    --background-color: var(--background-50);
-    --card-bg: var(--background-100);
-    --text-color: var(--text-900);
-    --text-muted: var(--text-700);
-    --border-color: var(--background-300);
+    --background-color: var(--neutral-50);
+    --card-bg: var(--neutral-100);
+    --text-color: var(--neutral-900);
+    --text-muted: var(--neutral-600);
+    --border-color: var(--neutral-200);
     --success-color: var(--accent-500);
-    --hover-glow-color: rgba(24, 48, 231, 0.3);
-    --theme-toggle-bg: var(--background-200);
-    --theme-toggle-text: var(--text-800);
-    --theme-toggle-hover: var(--primary-200);
+    --hover-glow-color: rgba(99, 102, 241, 0.2);
+    --theme-toggle-bg: var(--neutral-200);
+    --theme-toggle-text: var(--neutral-700);
+    --theme-toggle-hover: var(--primary-100);
 }
 
 /* Dark Theme Override */
 .dark-theme, :root:not(.light-theme) {
     --primary-color: var(--primary-500);
-    --secondary-color: var(--secondary-500);
-    --accent-color: var(--accent-500);
-    --background-color: var(--background-950);
-    --card-bg: var(--background-900);
-    --text-color: var(--text-100);
-    --text-muted: var(--text-300);
-    --border-color: var(--background-700);
-    --success-color: var(--accent-500);
-    --hover-glow-color: rgba(24, 48, 231, 0.3);
-    --theme-toggle-bg: var(--background-800);
-    --theme-toggle-text: var(--text-200);
-    --theme-toggle-hover: var(--primary-700);
+    --secondary-color: var(--secondary-400);
+    --accent-color: var(--accent-400);
+    --background-color: var(--neutral-950);
+    --card-bg: var(--neutral-900);
+    --text-color: var(--neutral-100);
+    --text-muted: var(--neutral-400);
+    --border-color: var(--neutral-800);
+    --success-color: var(--accent-400);
+    --hover-glow-color: rgba(99, 102, 241, 0.3);
+    --theme-toggle-bg: var(--neutral-800);
+    --theme-toggle-text: var(--neutral-300);
+    --theme-toggle-hover: var(--primary-900);
 }
 
 /* Smooth theme transition */
@@ -621,8 +614,8 @@ body, body * {
 
 .btn-secondary:hover {
     background-color: var(--primary-color);
-    color: var(--background-color);
-    transform: translateY(-3px);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .btn-tertiary {
@@ -1504,16 +1497,16 @@ wnload Popup Styles */
 }
 
 .btn-primary {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: white;
-    box-shadow: 0 2px 8px rgba(0, 169, 195, 0.3);
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.25);
 }
 
 .btn-primary:hover {
-    background: var(--primary-color);
-    color: var(--background-color);
+    background: var(--primary-700);
+    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(137, 221, 255, 0.4);
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
 }
 
 .btn-secondary {
